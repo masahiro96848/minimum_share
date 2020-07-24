@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const glob = require('glob');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,5 +12,17 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+
+// sassディレクトリ直下のscssファイルを全てコンパイル
+mix.webpackConfig({
+    module: {
+        rules: [{
+            test: /\.scss/,
+            enforce: "pre",
+            loader: 'import-glob-loader'
+        }]
+    }
+})
+    .js('resources/js/app.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css')
+    .sourceMaps();
