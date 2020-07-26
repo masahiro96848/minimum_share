@@ -1,5 +1,5 @@
 .l-header {
-  &-nav {
+  &--nav {
     height: 80px;
     background-color: $background-color_header;
     position: fixed;
@@ -14,13 +14,13 @@
     box-sizing: border-box;
   }
 
-  &-title {
+  &--title {
     font-family: $font-family_title;
     text-decoration: none;
     color: $font-color_title;
     font-size: $font-size_xxl;
 
-    &-link a {
+    &--link a {
       text-decoration: none;
     }
   }

@@ -1,0 +1,48 @@
+.p-panel {
+
+  &--box{
+    width: 25%;
+    margin-right: 3%;
+    margin-left: 5%;
+    margin-top: $space_xxl;
+    @include mq(sm) {
+      width: 40%;
+      margin-bottom: $space_l;
+    }
+  }
+
+  &--image img{
+    max-width: 300px;
+    max-height: 300px;
+    width: 300px;
+    height: 300px;
+    @include mq(sm) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &--body{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+
+  &--title{
+    margin-top: $space_l;
+    font-family: $font-family_sub02;
+    @include mq(sm) {
+      font-size: $font-size_m;
+    }
+
+  }
+
+  &--heart{
+    padding-right: $space_m;
+    margin-top: $space_l;
+    @include mq(sm) {
+      padding-right: 0;
+    }
+  }
+}
