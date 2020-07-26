@@ -5,7 +5,7 @@
 @section('content')
   @include('nav')
   <div class="l-container">
-    <div class="l-container--wrapper">
+    <div class="l-container--wrapper l-container--flex ">
       <div class="p-panel--box ">
         <a href="">
           <div class="p-panel--image">

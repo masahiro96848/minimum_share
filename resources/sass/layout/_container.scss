@@ -8,19 +8,21 @@
     padding-left: 100px;
     padding-right: 100px;
     padding-bottom: 150px;
+    @include mq(sm) {
+      padding-left: $space_m;
+      padding-right: $space_m;
+    }
+  }
+
+  &--flex {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;
+  }
 
-    @include mq(sm) {
-      padding-left: $space_m;
-      padding-right: $space_m;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      flex-wrap: wrap;
 
-    }
+  &--box {
+    justify-content: center;
   }
 }
