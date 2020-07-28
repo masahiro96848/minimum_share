@@ -97,6 +97,10 @@ a {
   text-decoration: none;
 }
 
+.c-button {
+  border: none;
+}
+
 .c-button--submit {
   border: none;
   display: block;
@@ -125,6 +129,11 @@ a {
   width: 100%;
   padding: 10px 10px;
   margin-bottom: 20px;
+}
+
+.c-form--link {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .c-product--wrapper {
