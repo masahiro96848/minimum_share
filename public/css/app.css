@@ -52,6 +52,17 @@ a {
   justify-content: center;
 }
 
+.l-container--form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 414px) {
+  .l-container--form {
+    width: 80%;
+  }
+}
+
 .footer {
   text-align: center;
   color: black;
@@ -84,6 +95,36 @@ a {
 
 .l-header--title--link a {
   text-decoration: none;
+}
+
+.c-button--submit {
+  border: none;
+  display: block;
+  background-color: #cab7b7;
+  margin: 0 auto;
+  padding: 20px 20px;
+  margin-top: 20px;
+  width: 50%;
+}
+
+.c-form {
+  text-align: center;
+}
+
+.c-form--container {
+  text-align: center;
+}
+
+.c-form--title {
+  margin-bottom: 50px;
+  font-family: "Vollkorn", serif;
+}
+
+.c-form--control {
+  border: none;
+  width: 100%;
+  padding: 10px 10px;
+  margin-bottom: 20px;
 }
 
 .c-product--wrapper {
@@ -616,5 +657,9 @@ a {
 
 .u-pl_0 {
   padding-left: 0;
+}
+
+.u-width_100 {
+  width: 100%;
 }
 

@@ -15,5 +15,7 @@
 //     return view('welcome');
 // });
 
+Auth::routes();
+
 Route::get('/index', 'ProductsController@index')->name('products.index');
 Route::get('/show', 'ProductsController@show')->name('products.show');

@@ -25,4 +25,12 @@
   &--box {
     justify-content: center;
   }
+
+  &--form {
+    width: 50%;
+    margin: 0 auto;
+    @include mq(sm) {
+      width: 80%;
+    }
+  }
 }

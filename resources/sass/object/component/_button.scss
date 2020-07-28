@@ -1,0 +1,12 @@
+.c-button {
+  
+  &--submit {
+    border: none;
+    display: block;
+    background-color: $background-color_button01;
+    margin: 0 auto;
+    padding: $space_l $space_l;
+    margin-top: $space_l;
+    width: 50%;
+  }
+}
