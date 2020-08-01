@@ -8,6 +8,7 @@
       <div class="l-container--wrapper u-width_100">
         <div class="l-container--form">
           <div class="c-form--container">
+            @include('error')
             <h3 class="c-form--title">Login</h3>
           </div>
           <div class="c-form--body">
@@ -22,7 +23,7 @@
                 <input type="password" class="c-form--control" name="password" required>
               </div>
                 <button class="c-button--submit " type="submit">Login</button>
-                <p class="c-form--link">新規登録は<a href="">こちら</a></p>
+                <p class="c-form--link">新規登録は<a href="{{ route('register')}}">こちら</a></p>
             </form>
           </div>
         </div>  

@@ -8,6 +8,7 @@
     padding-left: 100px;
     padding-right: 100px;
     padding-bottom: 150px;
+
     @include mq(sm) {
       padding-left: $space_m;
       padding-right: $space_m;
@@ -21,6 +22,19 @@
     flex-wrap: wrap;
   }
 
+  &--between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &--between::after {
+    content: '';
+    width: 30%;
+    display: block;
+  }
+
 
   &--box {
     justify-content: center;
@@ -29,8 +43,14 @@
   &--form {
     width: 50%;
     margin: 0 auto;
+
     @include mq(sm) {
       width: 80%;
     }
+  }
+
+  &--postForm {
+    display: flex;
+    justify-content: center;
   }
 }
