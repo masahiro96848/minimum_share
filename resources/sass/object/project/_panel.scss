@@ -3,6 +3,12 @@
   &--box{
     width: 30%;
     margin-top: $space_xxl;
+    @include mq(lg) {
+      width: 45%;
+    }
+    @include mq(md) {
+      width: 45%;
+    }
     @include mq(sm) {
       width: 40%;
       margin-bottom: $space_l;

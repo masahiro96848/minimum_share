@@ -18,6 +18,6 @@
 Auth::routes();
 
 Route::get('/index', 'ProductsController@index')->name('products.index');
-Route::get('/show', 'ProductsController@show')->name('products.show');
+Route::get('/product/{id}', 'ProductsController@show')->name('products.show');
 Route::get('/new', 'ProductsController@new')->name('products.new')->middleware('auth');
 Route::post('/create', 'ProductsController@create')->name('products.create');

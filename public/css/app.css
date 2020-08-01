@@ -34,6 +34,13 @@ a {
   padding-bottom: 150px;
 }
 
+@media screen and (max-width: 769px) {
+  .l-container--wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
 @media screen and (max-width: 414px) {
   .l-container--wrapper {
     padding-left: 10px;
@@ -61,6 +68,14 @@ a {
   display: block;
 }
 
+@media screen and (max-width: 769px) {
+  .l-container--between::after {
+    content: "";
+    width: 50%;
+    display: block;
+  }
+}
+
 .l-container--box {
   justify-content: center;
 }
@@ -68,6 +83,18 @@ a {
 .l-container--form {
   width: 50%;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .l-container--form {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .l-container--form {
+    width: 75%;
+  }
 }
 
 @media screen and (max-width: 414px) {
@@ -161,10 +188,12 @@ a {
 .c-product--wrapper {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .c-product--wrapper--end {
   justify-content: flex-end;
+  margin-left: auto;
 }
 
 .c-product--price {
@@ -212,11 +241,25 @@ a {
 .p-detail--imageBox img {
   width: 600px;
   height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) {
+  .p-detail--imageBox img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .p-detail--imageBox img {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 414px) {
   .p-detail--imageBox img {
-    width: 300px;
+    width: 100%;
     height: 300px;
   }
 }
@@ -228,9 +271,21 @@ a {
   padding-top: 5px;
 }
 
+@media screen and (max-width: 1024px) {
+  .p-detail--body {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .p-detail--body {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 414px) {
   .p-detail--body {
-    width: 85%;
+    width: 100%;
   }
 }
 
@@ -301,6 +356,10 @@ a {
     display: block;
     margin-right: 0;
   }
+}
+
+.p-detail--button--none {
+  display: none;
 }
 
 .p-menu--button {
@@ -440,6 +499,18 @@ a {
 .p-panel--box {
   width: 30%;
   margin-top: 40px;
+}
+
+@media screen and (max-width: 1024px) {
+  .p-panel--box {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .p-panel--box {
+    width: 45%;
+  }
 }
 
 @media screen and (max-width: 414px) {
@@ -586,6 +657,12 @@ a {
   margin-left: 50px;
 }
 
+/* margin auto */
+
+.u-m_auto {
+  margin: 0 auto;
+}
+
 /* top */
 
 .u-pt_m {
@@ -692,5 +769,9 @@ a {
 
 .u-width_100 {
   width: 100%;
+}
+
+.u-width_90 {
+  width: 90%;
 }
 

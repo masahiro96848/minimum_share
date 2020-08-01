@@ -4,15 +4,15 @@
 
 @section('content')
   @include('nav')
-  <div class="l-container--wrapper">
+  <div class="l-container--wrapper u-width_90 u-m_auto">
     <div class="l-container--box l-container--flex">
       <div class="p-detail--imageBox">
-        <img src="../img/01-65-300x200.jpg" alt="" class="p-detail--image">
+        <img src="{{asset('storage/' . $product->photo)}}" alt="" class="p-detail--image">
       </div>
       <div class="p-detail--body">
         <div class="p-detail--content">
           <div class="p-detail--title">
-            <h4>4畳半最高!!</h4>
+            <h4>{{ $product->title }}</h4>
           </div>
           <div class="c-product--wrapper">
             <a href="">
@@ -21,7 +21,7 @@
             <span class="c-user--name">masahiro</span>
           </div>
           <div class="p-detail--review">
-            <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p>{{ $product->review }}</p>
           </div>
           <div class="p-detail--tag">
             <a href="" class="p-detail--tagList">#おしゃれ</a>
@@ -31,13 +31,19 @@
             <i class="p-panel--heart fa fa-heart fa-lg" aria-hidden="true"></i>
           </div>
           <div class="c-product--wrapper--end u-pr_l ">
-            <p class="p-detail--price">¥2,000</p>
+            <p class="p-detail--price">¥{{ $product->price }}</p>
           </div>
+          @if(!empty($product->url))
           <div class="p-detail--purchase ">
             <p class="p-detail--button">
-              購入する
+              <a href="{{ $product->url }}">購入する</a> 
+              @else
+              <div class="p-detail--purchase">
+                <p class="p-detail--button--none"></p>
+              </div>
             </p>
           </div>
+          @endif
         </div>
       </div>
     </div>

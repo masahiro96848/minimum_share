@@ -27,7 +27,7 @@ class ProductRequest extends FormRequest
             'title' => 'required|max:30',
             'review' => 'required|max:200',
             'price' => 'required',
-            'url' => 'url',
+            'url' => '',
         ];
     }
 

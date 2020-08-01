@@ -8,7 +8,7 @@
     <div class="l-container--wrapper l-container--between ">
       @foreach ($products as $product)
         <div class="p-panel--box ">
-        <a href="">
+        <a href="{{route('products.show', [$product->id])}}">
           <div class="p-panel--image">
             <img src="{{ asset('storage/' . $product->photo)}}" class="c-shadow--image" alt="">
           </div>
