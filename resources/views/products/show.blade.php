@@ -29,6 +29,11 @@
           </div>
           <div class="p-detail--heart">
             <i class="p-panel--heart fa fa-heart fa-lg" aria-hidden="true"></i>
+        
+            <a href="{{route("products.edit", ['id' => $product])}}">
+              <i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i>
+            </a>
+            <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
           </div>
           <div class="c-product--wrapper--end u-pr_l ">
             <p class="p-detail--price">¥{{ $product->price }}</p>

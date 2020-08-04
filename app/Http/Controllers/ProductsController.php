@@ -47,4 +47,32 @@ class ProductsController extends Controller
 
         return redirect()->route('products.index');
     }
+
+    public function edit( $id )
+    {
+        $product = Product::find($id);
+        return view('products.edit',[
+            'product' => $product
+        ]);
+    }
+
+    public function update(ProductRequest $request, int $id)
+    {
+
+        $product = Product::find($id);
+        $product->title = $request->title;
+        $product->review = $request->review;
+        $product->price = $request->price;
+        $product->url = $request->url;
+        $product->user_id = $request->user()->id;
+
+        $filename = $request->file('photo')->store('public');
+        $product->photo = str_replace('public', '', $filename);
+        $product->save();
+        
+
+        return redirect()->route('products.index');
+    }
+
+    
 }
