@@ -15,4 +15,11 @@
 //     return view('welcome');
 // });
 
+Auth::routes();
+
 Route::get('/index', 'ProductsController@index')->name('products.index');
+Route::get('/product/{id}', 'ProductsController@show')->name('products.show');
+Route::get('/new', 'ProductsController@new')->name('products.new')->middleware('auth');
+Route::post('/create', 'ProductsController@create')->name('products.create');
+Route::get('/product/{id}/edit', 'ProductsController@edit')->name('products.edit')->middleware('auth');
+Route::put('/product/{id}/edit', 'ProductsController@update')->name('products.update')->middleware('auth');

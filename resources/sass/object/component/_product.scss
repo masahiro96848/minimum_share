@@ -1,0 +1,24 @@
+.c-product {
+
+  &--wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &--end {
+      justify-content: flex-end;
+      margin-left: auto;
+    }
+  }
+
+
+  &--price {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: $space_m;
+    font-size: $font-size_l;
+    @include mq(sm) {
+      padding-right: 0;
+    }
+  }
+}

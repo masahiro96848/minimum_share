@@ -1,0 +1,54 @@
+.p-panel {
+
+  &--box{
+    width: 30%;
+    margin-top: $space_xxl;
+    @include mq(lg) {
+      width: 45%;
+    }
+    @include mq(md) {
+      width: 45%;
+    }
+    @include mq(sm) {
+      width: 40%;
+      margin-bottom: $space_l;
+      margin-right: 15px;
+      margin-left: $space_m;
+    }
+  }
+  
+
+  &--image img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    @include mq(sm) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &--body{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+
+  &--title{
+    margin-top: $space_l;
+    font-family: $font-family_sub02;
+    @include mq(sm) {
+      font-size: $font-size_m;
+    }
+
+  }
+
+  &--heart{
+    padding-right: $space_m;
+    margin-top: $space_l;
+    @include mq(sm) {
+      padding-right: 0;
+    }
+  }
+}
