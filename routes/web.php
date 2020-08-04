@@ -15,6 +15,8 @@
 //     return view('welcome');
 // });
 
+// use Illuminate\Routing\Route;
+
 Auth::routes();
 
 Route::get('/index', 'ProductsController@index')->name('products.index');
@@ -23,3 +25,4 @@ Route::get('/new', 'ProductsController@new')->name('products.new')->middleware('
 Route::post('/create', 'ProductsController@create')->name('products.create');
 Route::get('/product/{id}/edit', 'ProductsController@edit')->name('products.edit')->middleware('auth');
 Route::put('/product/{id}/edit', 'ProductsController@update')->name('products.update')->middleware('auth');
+Route::delete('/product/{id}/destroy', 'ProductsController@destroy')->name('products.destroy')->middleware('auth');
