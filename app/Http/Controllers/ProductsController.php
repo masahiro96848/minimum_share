@@ -11,6 +11,11 @@ use App\Http\Requests\ProductRequest;
 
 class ProductsController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('can:update, Product')->only('update');
+    // }
+
     public function index()
     {
         $products = Product::orderBy('created_at', 'desc')->get();
@@ -49,17 +54,38 @@ class ProductsController extends Controller
         return redirect()->route('products.index');
     }
 
-    public function edit( $id )
+    public function edit($id)
     {
+        // $this->authorize('update', $product);
+        // if(Auth::id() !== $product->user_id) {
+            //     return redirect()->route('products.index');
+        // } else {
+            //     // $product = Product::find($id);
+            //     return view('products.edit', [
+                //         'product' => $product
+                
+                //     ]);  
+                // }
         $product = Product::find($id);
-        return view('products.edit',[
-            'product' => $product
-        ]);
+        $this->authorize('update', $product);
+        return view('products.edit', [
+                'product' => $product
+            ]);  
     }
 
-    public function update(ProductRequest $request, int $id)
-    {
+    /**
+     * 指定したポストの更新
+     *
+     * @param  Request  $request
+     * @param  Product  $product
+     * @return Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
 
+    public function update(ProductRequest $request, Product $product, int $id)
+    {
+        $this->authorize('update', $product);
+        
         $product = Product::find($id);
         $product->title = $request->title;
         $product->review = $request->review;
@@ -78,7 +104,7 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
-
+        $this->authorize('update', $product);
         $product->delete();
 
         return redirect()->route('products.index');
