@@ -13,7 +13,7 @@
       <li class="p-menu--item "><a class="p-menu--link" href="">Tags</a></li>
       @if (Auth::check())
       <li class="p-menu--item "><a class="p-menu--link" href="{{ route('products.new')}}">Post</a></li>
-      <li class="p-menu--item "><a class="p-menu--link" href="">Mypage</a></li>
+      <li class="p-menu--item "><a class="p-menu--link" href="{{ route('users.mypage')}}">Mypage</a></li>
       <li class="p-menu--item ">
         <a href="{{ route('login')}}" id="logout">Logout</a> 
           <form id="logout-form" method="POST" action="{{ route('logout') }}" >

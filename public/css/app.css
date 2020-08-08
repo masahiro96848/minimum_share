@@ -108,6 +108,23 @@ a {
   justify-content: center;
 }
 
+.l-container--mypage {
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 769px) {
+  .l-container--mypage {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .l-container--mypage {
+    width: 100%;
+  }
+}
+
 .footer {
   text-align: center;
   color: black;
@@ -144,16 +161,27 @@ a {
 
 .c-button {
   border: none;
+  padding: 20px 20px;
+}
+
+.c-button a {
+  display: block;
 }
 
 .c-button--submit {
-  border: none;
   display: block;
   background-color: #cab7b7;
   margin: 0 auto;
-  padding: 20px 20px;
   margin-top: 20px;
   width: 50%;
+}
+
+.c-button--profileEdit {
+  text-align: center;
+  background-color: #d3bfbf;
+  font-size: 22px;
+  border: none;
+  margin-top: 30px;
 }
 
 .c-form {
@@ -196,16 +224,24 @@ a {
   margin-left: auto;
 }
 
-.c-product--price {
+.c-product--wrapper--between {
   display: flex;
-  justify-content: flex-end;
-  padding-right: 10px;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 20px;
+}
+
+.c-product--date {
+  font-size: 10px;
+}
+
+.c-product--price {
   font-size: 22px;
 }
 
 @media screen and (max-width: 414px) {
   .c-product--price {
-    padding-right: 0;
+    font-size: 16px;
   }
 }
 
@@ -223,9 +259,28 @@ a {
 }
 
 .c-user--image {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+}
+
+@media screen and (max-width: 414px) {
+  .c-user--image {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.c-user--image--lg {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 414px) {
+  .c-user--image--lg {
+    width: 100%;
+  }
 }
 
 .c-user--name {
@@ -236,6 +291,47 @@ a {
   .c-user--name {
     padding-left: 5px;
   }
+}
+
+.c-user--name--lg {
+  text-align: center;
+  font-size: 22px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.c-user--avator {
+  text-align: center;
+}
+
+.c-user--follows {
+  margin: 30px auto;
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 414px) {
+  .c-user--follows {
+    width: 60%;
+  }
+}
+
+.c-user--myProduct {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+.c-user--postProduct {
+  padding: 10px 20px;
+  border-bottom: 4px solid black;
+}
+
+.c-user--myFavorite {
+  padding: 10px 20px;
 }
 
 .p-detail--imageBox img {
@@ -319,13 +415,13 @@ a {
 .p-detail--price {
   display: flex;
   justify-content: flex-end;
-  padding-right: 10px;
+  padding-right: 20px;
   font-size: 26px;
 }
 
 @media screen and (max-width: 414px) {
   .p-detail--price {
-    padding-right: 0;
+    padding-right: 10px;
   }
 }
 
@@ -541,6 +637,7 @@ a {
   justify-content: space-between;
   flex-direction: row;
   box-sizing: border-box;
+  align-items: center;
 }
 
 .p-panel--title {
@@ -561,7 +658,7 @@ a {
 
 @media screen and (max-width: 414px) {
   .p-panel--heart {
-    padding-right: 0;
+    margin-right: 0;
   }
 }
 

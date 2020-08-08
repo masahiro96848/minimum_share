@@ -22,7 +22,7 @@
               <div class="c-form">
                 <input type="password" class="c-form--control" name="password" required>
               </div>
-                <button class="c-button--submit " type="submit">Login</button>
+                <button class="c-button c-button--submit " type="submit">Login</button>
                 <p class="c-form--link">新規登録は<a href="{{ route('register')}}">こちら</a></p>
             </form>
           </div>

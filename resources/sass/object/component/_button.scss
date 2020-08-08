@@ -1,13 +1,24 @@
 .c-button {
   border: none;
+  padding: $space_l $space_l;
+
+  & a {
+    display: block;
+  }
 
   &--submit {
-    border: none;
     display: block;
     background-color: $background-color_button01;
     margin: 0 auto;
-    padding: $space_l $space_l;
     margin-top: $space_l;
     width: 50%;
+  }
+
+  &--profileEdit {
+    text-align: center;
+    background-color: $background-color_button02;
+    font-size: $font-size_l;
+    border: none;
+    margin-top: $space_xl;
   }
 }

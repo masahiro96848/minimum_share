@@ -11,10 +11,10 @@
         <form method="POST" action="{{ route('products.create')}}" enctype="multipart/form-data">
           @csrf
           @include('products.form')
-          <button class="c-button--submit " type="submit">Post</button>
+          <button class="c-button c-button--submit " type="submit">Post</button>
         </form>
       </div>
     </div>
   </div>
-    
+  @include('footer')  
 @endsection

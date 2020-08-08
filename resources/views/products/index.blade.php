@@ -18,12 +18,15 @@
           <i class="p-panel--heart fa fa-heart fa-lg" aria-hidden="true"></i>
         </div>
         <div class="c-product--wrapper">
-          <a href="">
-            <img src="../img/sample42.jpeg" alt="" class="c-user--image">
+          
+          <a href="{{ route('users.mypage')}}">
+            <img src="{{asset('storage/' . $product->user->profile_image)}}" alt="" class="c-user--image">
           </a>
-          <span class="c-user--name">masahiro</span>
+          
+          <span class="c-user--name">{{ $product->user->name}}</span>
         </div>
-        <div class="c-product--wrapper--end">
+        <div class="c-product--wrapper--between">
+           <p class="c-product--date">{{ $product->created_at->format('Y-m-d')}}</p> 
           <span class="c-product--price">¥{{ $product->price}} </span>
         </div>
       </div>

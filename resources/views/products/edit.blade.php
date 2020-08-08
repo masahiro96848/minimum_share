@@ -12,7 +12,7 @@
           @include('products.form')
           @method('PUT')
           @csrf
-          <button class="c-button--submit" type="submit">Update</button>
+          <button class="c-button c-button--submit" type="submit">Update</button>
         </form>
       </div>
     </div>

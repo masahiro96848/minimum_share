@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProductRequest;
 
 class ProductsController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
-
+        $products = Product::orderBy('created_at', 'desc')->get();
 
         return view('products.index',[
             'products' => $products,

@@ -27,23 +27,24 @@
             <a href="" class="p-detail--tagList">#おしゃれ</a>
             <a href="" class="p-detail--tagList">#コンパクト</a>
           </div>
-          <div class="p-panel--iconContainer">
-            <div class="p-detail--heart">
-            <i class="p-panel--heart fa fa-heart fa-lg" aria-hidden="true"></i>
-        
-            <a href="{{route("products.edit", ['id' => $product])}}">
-              <i class="p-panel--edit fa fa-pencil-square fa-lg" aria-hidden="true"></i>
-            </a>
-            <form action="{{ route('products.destroy', ['id' => $product])}}" method="POST" class="p-panel--trash">
-              @csrf
-              @method('DELETE')
-              <button class="p-panel--trash--button">
-                <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
-              </button>
-            </form>
-          </div>
-          </div>
-          <div class="c-product--wrapper--end u-pr_l ">
+          @if(Auth::id() === $product->user_id)
+            <div class="p-panel--iconContainer">
+              <div class="p-detail--heart">
+                <i class="p-panel--heart fa fa-heart fa-lg" aria-hidden="true"></i>
+                <a href="{{route("products.edit", ['id' => $product])}}">
+                  <i class="p-panel--edit fa fa-pencil-square fa-lg" aria-hidden="true"></i>
+                </a>
+                <form action="{{ route('products.destroy', ['id' => $product])}}" method="POST" class="p-panel--trash">
+                  @csrf
+                  @method('DELETE')
+                  <button class="p-panel--trash--button">
+                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          @endif
+          <div class="c-product--wrapper--end">
             <p class="p-detail--price">¥{{ $product->price }}</p>
           </div>
           @if(!empty($product->url))

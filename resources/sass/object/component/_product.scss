@@ -9,16 +9,24 @@
       justify-content: flex-end;
       margin-left: auto;
     }
+
+    &--between {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: $space_l;
+    }
+
+  }
+  
+  &--date {
+    font-size: $font-size_s;
   }
 
-
   &--price {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: $space_m;
     font-size: $font-size_l;
     @include mq(sm) {
-      padding-right: 0;
+      font-size: $font-size_default;
     }
   }
 }

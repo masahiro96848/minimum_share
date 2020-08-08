@@ -63,11 +63,11 @@
   &--price {
     display: flex;
     justify-content: flex-end;
-    padding-right: $space_m;
+    padding-right: $space_l;
     font-size: $font-size_xl;
 
     @include mq(sm) {
-      padding-right: 0;
+      padding-right: $space_m;
     }
   }
 
