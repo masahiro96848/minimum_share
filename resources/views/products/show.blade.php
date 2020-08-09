@@ -7,7 +7,7 @@
   <div class="l-container--wrapper u-width_90 u-m_auto">
     <div class="l-container--box l-container--flex">
       <div class="p-detail--imageBox">
-        <img src="{{asset('storage/' . $product->photo)}}" alt="" class="p-detail--image">
+        <img src="{{ $product->photo }}" alt="" class="p-detail--image">
       </div>
       <div class="p-detail--body">
         <div class="p-detail--content">

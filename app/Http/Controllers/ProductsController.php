@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\User;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProductRequest;
+use Illuminate\Contracts\Cache\Store;
+use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
@@ -47,8 +50,15 @@ class ProductsController extends Controller
         $product->url = $request->url;
         $product->user_id = $request->user()->id;
 
-        $filename = $request->file('photo')->store('public');
-        $product->photo = str_replace('public', '', $filename);
+        // $filename = $request->file('photo')->store('public');
+        // $product->photo = str_replace('public', '', $filename);
+        // s3アップロード開始
+        $image = $request->file('photo');
+        // バケットの`myprefix`フォルダへアップロード
+        $path = Storage::disk('s3')->put('myprefix', $image, 'public');
+        // アップロードした画像のフルパスを取得
+        $product->photo = Storage::disk('s3')->url($path);
+
         $product->save();
 
         return redirect()->route('products.index');
@@ -84,6 +94,7 @@ class ProductsController extends Controller
 
     public function update(ProductRequest $request, Product $product, int $id)
     {
+        $product = Product::find($id);
         $this->authorize('update', $product);
         
         $product = Product::find($id);
@@ -93,8 +104,13 @@ class ProductsController extends Controller
         $product->url = $request->url;
         $product->user_id = $request->user()->id;
 
-        $filename = $request->file('photo')->store('public');
-        $product->photo = str_replace('public', '', $filename);
+        // $filename = $request->file('photo')->store('public');
+        // $product->photo = str_replace('public', '', $filename);
+        $image = $request->file('photo');
+        // バケットの`myprefix`フォルダへアップロード
+        $path = Storage::disk('s3')->put('myprefix', $image, 'public');
+        // アップロードした画像のフルパスを取得
+        $product->photo = Storage::disk('s3')->url($path);
         $product->save();
         
 

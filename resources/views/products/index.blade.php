@@ -10,7 +10,7 @@
         <div class="p-panel--box ">
         <a href="{{route('products.show', [$product->id])}}">
           <div class="p-panel--image">
-            <img src="{{ asset('storage/' . $product->photo)}}" class="c-shadow--image" alt="">
+            <img src="{{ $product->photo}}" class="c-shadow--image" alt="">
           </div>
         </a>
         <div class="p-panel--body">
