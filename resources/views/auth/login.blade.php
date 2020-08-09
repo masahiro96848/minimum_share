@@ -22,7 +22,13 @@
               <div class="c-form">
                 <input type="password" class="c-form--control" name="password" required>
               </div>
-                <button class="c-button--submit " type="submit">Login</button>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="remember-me" id="rememberCheck">
+                <label class="form-check-label" for="rememberCheck">
+                    ログイン状態を記憶する
+                </label>
+              </div>
+                <button class="c-button c-button--submit " type="submit">Login</button>
                 <p class="c-form--link">新規登録は<a href="{{ route('register')}}">こちら</a></p>
             </form>
           </div>

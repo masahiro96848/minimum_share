@@ -33,6 +33,7 @@
     justify-content: space-between;
     flex-direction: row;
     box-sizing: border-box;
+    align-items: center;
   }
 
   &--title{
@@ -45,10 +46,21 @@
   }
 
   &--heart{
-    padding-right: $space_m;
+    margin-right: $space_m;
     margin-top: $space_l;
     @include mq(sm) {
-      padding-right: 0;
+      margin-right: 0;
+    }
+  }
+
+  &--edit {
+    margin-right: $space_m;
+  }
+
+  &--trash {
+    display: inline-block;
+    &--button {
+      border: none;
     }
   }
 }

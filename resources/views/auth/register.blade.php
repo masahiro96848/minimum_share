@@ -30,7 +30,7 @@
               <div class="c-form">
                 <input type="password" class="c-form--control" name="password_confirmation" required>
               </div>
-                <button class="c-button--submit " type="submit">Sign up</button>
+                <button class="c-button c-button--submit " type="submit">Sign up</button>
                 <p class="c-form--link">ログインは<a href="{{ route('login')}}">こちら</a></p>
             </form>
           </div>

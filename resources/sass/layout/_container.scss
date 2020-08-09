@@ -71,4 +71,16 @@
     display: flex;
     justify-content: center;
   }
+
+  &--mypage {
+    width: 50%;
+    margin: 0 auto;
+    @include mq(md) {
+      width: 50%;
+    }
+
+    @include mq(sm) {
+      width: 100%;
+    }
+  }
 }
