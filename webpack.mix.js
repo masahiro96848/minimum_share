@@ -23,6 +23,9 @@ mix.webpackConfig({
         }]
     }
 })
-    .js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .sourceMaps();
+    .js('resources/js/app.js', 'public/js').version()
+    .js('resources/js/navMenu.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css').sourceMaps();
+
+// jsファイルを連結・圧縮  
+// mix.scripts(glob.sync('resources/assets/js/modules/vendors/*.js'), 'public/assets/js/vendors.js');

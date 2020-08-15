@@ -29,6 +29,7 @@
                 </label>
               </div>
                 <button class="c-button c-button--submit " type="submit">Login</button>
+                <p class="c-form--link">パスワードを忘れた方は<a href="{{ route('password.request')}}">こちら</a></p>
                 <p class="c-form--link">新規登録は<a href="{{ route('register')}}">こちら</a></p>
             </form>
           </div>

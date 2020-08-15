@@ -8,7 +8,7 @@
     <div class="l-container--wrapper u-width_100">
       <div class="l-container--mypage">
         <div class="c-user--avator">
-          <img src="{{ asset('storage/' . $user->profile_image)}}" alt="" class="c-user--image--lg">
+          <img src="{{ $user->profile_image }}" alt="" class="c-user--image--lg">
         </div>
         <div class="c-user--name--lg">
           <p>{{ $user->name }}</p>
@@ -41,5 +41,5 @@
       </div>
     </div>
   </div>
-    
+  @include('footer')  
 @endsection

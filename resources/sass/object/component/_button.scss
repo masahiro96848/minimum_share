@@ -21,4 +21,20 @@
     border: none;
     margin-top: $space_xl;
   }
+
+  &--heart {
+    border: none;
+    outline: none;
+    background: transparent;
+    &:focus {
+      outline: 0;
+    }
+  }
+
 }
+
+// .clear-decoration {
+//   border: none;
+//   outline: none;
+//   background: transparent;
+// }

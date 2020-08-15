@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
 /* 余白 */
 
@@ -184,6 +184,16 @@ a {
   margin-top: 30px;
 }
 
+.c-button--heart {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.c-button--heart:focus {
+  outline: 0;
+}
+
 .c-form {
   text-align: center;
 }
@@ -332,6 +342,25 @@ a {
 
 .c-user--myFavorite {
   padding: 10px 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .p-detail--imageBox {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .p-detail--imageBox {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .p-detail--imageBox {
+    width: 350px;
+    height: 300px;
+  }
 }
 
 .p-detail--imageBox img {
@@ -611,9 +640,8 @@ a {
 
 @media screen and (max-width: 414px) {
   .p-panel--box {
-    width: 40%;
+    width: 45%;
     margin-bottom: 20px;
-    margin-right: 15px;
     margin-left: 10px;
   }
 }
@@ -633,11 +661,12 @@ a {
 }
 
 .p-panel--body {
+  box-sizing: border-box;
+}
+
+.p-panel--content {
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: center;
 }
 
 .p-panel--title {
@@ -648,6 +677,10 @@ a {
 @media screen and (max-width: 414px) {
   .p-panel--title {
     font-size: 12px;
+    overflow: hidden;
+    width: 200px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 
@@ -660,6 +693,10 @@ a {
   .p-panel--heart {
     margin-right: 0;
   }
+}
+
+.p-panel--heart--red {
+  color: red;
 }
 
 .p-panel--edit {
