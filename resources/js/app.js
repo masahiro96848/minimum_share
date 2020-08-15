@@ -4,9 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
 
-window.Vue = require('vue');
 
 /**
  * The following block of code may be used to automatically register your
@@ -15,18 +13,33 @@ window.Vue = require('vue');
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
-
+// $('.p-menu--button').on('click', function() {
+//   if( $(this).hasClass('active')){
+//     $(this).removeClass('active');
+//     $('.p-menu--wrap').addClass('close').removeClass('open');
+//   }else {
+//     $(this).addClass('active');
+//     $('.p-menu--wrap').addClass('open').removeClass('close');
+//   }
+// });
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+Vue.config.devtools = true;
+import './bootstrap'
+import Vue from 'vue'
+import ProductLike from './components/ProductLike'
 
 const app = new Vue({
     el: '#app',
+    components: {
+        ProductLike,
+    }
 });

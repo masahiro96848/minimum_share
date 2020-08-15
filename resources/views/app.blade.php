@@ -22,11 +22,13 @@
 
 
   <link rel="stylesheet" href={{ asset('css/app.css')}} >
+  
 </head>
 
 <body>
-
-  @yield('content')
+  <div id="app">
+    @yield('content')
+  </div>
 
   <script>
    document.getElementById('logout').addEventListener('click', function(event) {
@@ -35,10 +37,13 @@
    });
  </script>
 
-  <script
-  src="https://code.jquery.com/jquery-3.5.1.js"
+
+<script src="{{ mix('js/app.js')}}"></script>
+<script src="{{ mix('js/navMenu.js')}}"></script>
+{{-- <script
+src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
-  <script src={{ asset('js/app.js') }}></script>
+  crossorigin="anonymous"></script> --}}
+
 </body>
 </html>

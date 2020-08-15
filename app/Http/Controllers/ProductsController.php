@@ -22,7 +22,7 @@ class ProductsController extends Controller
     public function index()
     {
         $products = Product::orderBy('created_at', 'desc')->get();
-
+        
         return view('products.index',[
             'products' => $products,
         ]);
@@ -126,4 +126,25 @@ class ProductsController extends Controller
         return redirect()->route('products.index');
     }
     
+    public function like(Request $request, Product $product) 
+    {
+        $product->likeProducts()->detach($request->user()->id);
+        $product->likeProducts()->attach($request->user()->id);
+
+        return [
+            'id' => $product->id,
+            'countLikes' => $product->count_likes,
+        ];
+    }
+
+    public function unlike(Request $request, Product $product) 
+    {
+        $product->likeProducts()->detach($request->user()->id);
+
+        return [
+            'id' => $product->id,
+            'countLikes' => $product->count_likes,
+        ];
+    }
+
 }

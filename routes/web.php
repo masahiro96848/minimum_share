@@ -30,3 +30,9 @@ Route::delete('/product/{id}/destroy', 'ProductsController@destroy')->name('prod
 Route::get('/mypage', 'UserController@mypage')->name('users.mypage')->middleware('auth');
 Route::get('/mypage/edit', 'UserController@edit')->name('users.edit')->middleware('auth');
 Route::put('/mypage/update', 'UserController@update')->name('users.update')->middleware('auth');
+
+
+Route::prefix('product')->name('product.')->group(function() {
+  Route::put('/{product}/like', 'ProductsController@like')->name('like')->middleware('auth');
+  Route::delete('/{product}/like', 'ProductsController@unlike')->name('unlike')->middleware('auth');
+});

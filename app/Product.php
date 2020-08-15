@@ -12,4 +12,22 @@ class Product extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+
+    public function likeProducts()
+    {
+        return $this->belongsToMany('App\User', 'likes')->withTimestamps();
+    }
+
+    public function isLikedBy(?User $user)
+    {
+        return $user
+        ?(bool)$this->likeProducts->where('id', $user->id)->count()
+        : false;
+    }
+
+    public function getCountLikesAttribute()
+    {
+        return $this->likeProducts->count();
+    }
 }
