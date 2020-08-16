@@ -223,6 +223,10 @@ a {
   text-align: center;
 }
 
+.c-post--tags::before {
+  content: "#";
+}
+
 .c-product--wrapper {
   display: flex;
   flex-direction: row;

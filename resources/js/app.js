@@ -36,10 +36,12 @@ Vue.config.devtools = true;
 import './bootstrap'
 import Vue from 'vue'
 import ProductLike from './components/ProductLike'
+import ProductTagsInput from './components/ProductTagsInput'
 
 const app = new Vue({
     el: '#app',
     components: {
         ProductLike,
+        ProductTagsInput
     }
 });

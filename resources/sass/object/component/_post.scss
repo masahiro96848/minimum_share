@@ -1,5 +1,7 @@
 .c-post {
   text-align: center;
 
-  
+  &--tags::before {
+    content: "#";
+  }
 }

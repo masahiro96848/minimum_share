@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\User;
-
+use App\Tag;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,7 +39,14 @@ class ProductsController extends Controller
 
     public function new()
     {
-        return view('products.new');
+        $allTagNames = Tag::all()->map(function($tag) {
+            return [
+                'text' => $tag->name,
+            ];
+        });
+        return view('products.new', [
+            'allTagNames' => $allTagNames,
+        ]);
     }
 
     public function create(ProductRequest $request, Product $product)
@@ -49,6 +56,8 @@ class ProductsController extends Controller
         $product->price = $request->price;
         $product->url = $request->url;
         $product->user_id = $request->user()->id;
+
+       
 
         // $filename = $request->file('photo')->store('public');
         // $product->photo = str_replace('public', '', $filename);
@@ -60,6 +69,13 @@ class ProductsController extends Controller
         $product->photo = Storage::disk('s3')->url($path);
 
         $product->save();
+
+        $request->tags->each(function ($tagName) use ($product) {
+            $tag = Tag::firstOrCreate([
+                'name' => $tagName,
+            ]);
+            $product->tags()->attach($tag);
+        });
 
         return redirect()->route('products.index');
     }
@@ -78,8 +94,22 @@ class ProductsController extends Controller
                 // }
         $product = Product::find($id);
         $this->authorize('update', $product);
+        $tagNames = $product->tags->map(function($tag) {
+            return [
+                'text' => $tag->name
+            ];
+        });
+
+        $allTagNames = Tag::all()->map(function($tag) {
+            return [
+                'text' => $tag->name,
+            ];
+        });
+
         return view('products.edit', [
-                'product' => $product
+                'product' => $product,
+                'tagNames' => $tagNames,
+                'allTagNames' => $allTagNames,
             ]);  
     }
 
@@ -97,7 +127,6 @@ class ProductsController extends Controller
         $product = Product::find($id);
         $this->authorize('update', $product);
         
-        $product = Product::find($id);
         $product->title = $request->title;
         $product->review = $request->review;
         $product->price = $request->price;
@@ -112,6 +141,14 @@ class ProductsController extends Controller
         // アップロードした画像のフルパスを取得
         $product->photo = Storage::disk('s3')->url($path);
         $product->save();
+
+        $product->tags()->detach();
+        $request->tags->each(function($tagName) use($product) {
+            $tag =  Tag::firstOrCreate([
+                'name' => $tagName,
+            ]);
+            $product->tags()->attach($tag);
+        });
         
 
         return redirect()->route('products.index');
