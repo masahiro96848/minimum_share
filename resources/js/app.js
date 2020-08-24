@@ -36,9 +36,9 @@ window.$ = window.jQuery = require('jquery');
 
 Vue.config.devtools = true;
 // require('./bootstrap');
-require('./navMenu');
+// require('./main');
 import './bootstrap'
-import './navMenu'
+import './main'
 
 window.Vue = require('vue');
 window.$ = require('jquery');
