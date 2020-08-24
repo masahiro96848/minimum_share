@@ -24,10 +24,17 @@
             <div class="p-detail--review">
               <p>{{ $product->review }}</p>
             </div>
-            <div class="p-detail--tag">
-              <a href="" class="p-detail--tagList">#おしゃれ</a>
-              <a href="" class="p-detail--tagList">#コンパクト</a>
-            </div>
+            @foreach ($product->tags as $tag)
+              @if ($loop->first)
+                <div class="p-detail--tag">  
+              @endif
+                <a href="{{ route('tags.show', ['name' => $tag->name])}}" class="p-detail--tagList">
+                  {{ $tag->hashtag }}
+                </a>
+              @if ($loop->last)
+                </div>  
+              @endif
+            @endforeach
             @if(Auth::id() === $product->user_id)
               <div class="p-panel--iconContainer">
                 <div class="p-detail--heart">
@@ -64,5 +71,6 @@
       </div>
     </div>
   </div>
+</div>
   @include('footer')
-@endsection
+  @endsection

@@ -11,8 +11,15 @@
         <form method="POST" action="{{ route('users.update')}}" enctype="multipart/form-data">
           @csrf
           @method('PUT')
-            <div class="c-post--imageBox">
-              <input type="file" name="profile_image" value="{{ $user->profile_image ?? old('profile_image') }}">
+            <div class="c-post--imageBox c-post--img--radius">
+              {{-- <input type="file" name="profile_image" value="{{ $user->profile_image ?? old('profile_image') }}"> --}}
+              <product-img-preview
+                set-image-data='{{ $user->profile_image ?? ''}}'
+                name="profile_image"
+                class-object="c-post--img--radius"
+              >
+
+              </product-img-preview>
             </div>
             <label for="name">NickName</label>
             <div class="c-post">

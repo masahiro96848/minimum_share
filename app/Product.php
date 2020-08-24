@@ -30,4 +30,9 @@ class Product extends Model
     {
         return $this->likeProducts->count();
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany('App\Tag')->withTimeStamps();
+    }
 }
