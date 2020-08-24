@@ -1,5 +1,10 @@
 <div class="c-post--imageBox">
-  <input type="file" name="photo" value="{{ $product->photo ?? old('photo') }}">
+  {{-- <input type="file" name="photo" value="{{ $product->photo ?? old('photo') }}"> --}}
+  <product-img-preview
+    
+  >
+
+  </product-img-preview>
 </div>
 <label for="title">Title</label>
 <div class="c-post">

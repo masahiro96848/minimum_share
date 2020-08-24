@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-
+import $ from 'jquery';
 
 /**
  * The following block of code may be used to automatically register your
@@ -32,16 +32,27 @@
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+window.$ = window.jQuery = require('jquery');
+
 Vue.config.devtools = true;
+// require('./bootstrap');
+require('./navMenu');
 import './bootstrap'
+import './navMenu'
+
+window.Vue = require('vue');
+window.$ = require('jquery');
+
 import Vue from 'vue'
 import ProductLike from './components/ProductLike'
 import ProductTagsInput from './components/ProductTagsInput'
+import ProductImgPreview from './components/ProductImgPreview'
 
 const app = new Vue({
     el: '#app',
     components: {
         ProductLike,
-        ProductTagsInput
+        ProductTagsInput,
+        ProductImgPreview
     }
 });

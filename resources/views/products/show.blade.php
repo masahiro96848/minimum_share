@@ -35,7 +35,6 @@
                 </div>  
               @endif
             @endforeach
-              {{-- <a href="" class="p-detail--tagList">#コンパクト</a> --}}
             @if(Auth::id() === $product->user_id)
               <div class="p-panel--iconContainer">
                 <div class="p-detail--heart">
@@ -72,5 +71,6 @@
       </div>
     </div>
   </div>
+</div>
   @include('footer')
-@endsection
+  @endsection
