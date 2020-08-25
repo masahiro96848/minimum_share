@@ -14,6 +14,7 @@
   <!-- Material Design Bootstrap -->
   
   <script src="{{asset('js/bootstrap.js')}}"></script>
+  
   {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet"> --}}
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   {{-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" /> --}}
@@ -39,8 +40,8 @@ crossorigin="anonymous"></script> --}}
 
 
   
-<script src="{{ mix('js/main.js')}}"></script>                                                          
 <script src="{{ mix('js/app.js') }}"></script>
+<script src="{{ mix('js/main.js')}}"></script>                                                          
   {{-- <script src="{{ mix('js/app.js')}}"></script> --}}
 </body>
 </html>

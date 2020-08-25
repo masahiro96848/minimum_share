@@ -619,11 +619,20 @@ a {
   }
 }
 
+.p-menu--link {
+  border: none;
+}
+
+.p-menu--link:active {
+  border: none;
+}
+
 @media screen and (max-width: 414px) {
   .p-menu--link {
     display: block;
-    margin: 0 10px;
+    margin: 0 auto;
     color: #fdeded;
+    background-color: transparent;
   }
 }
 

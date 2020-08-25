@@ -35,7 +35,7 @@ import $ from 'jquery';
 window.$ = window.jQuery = require('jquery');
 
 Vue.config.devtools = true;
-require('./bootstrap');
+// require('./bootstrap');
 require('./main');
 import './bootstrap'
 import './main'
