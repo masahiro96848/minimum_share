@@ -5,9 +5,12 @@
 @section('content')
   @include('nav')
   <div class="l-container">
-    <div class="l-container--wrapper l-container--between ">
+    <div class="l-container--title">
+      <h2 class="l-container--title--tag">Product List</h2>
+    </div>
+    <div class="l-container--wrapper u-pt_0 l-container--between">
       @foreach ($products as $product)
-        <div class="p-panel--box ">
+        <div class="p-panel--box">
           <a href="{{route('products.show', [$product->id])}}">
             <div class="p-panel--image">
               <img src="{{ $product->photo}}" class="c-shadow--image" alt="">

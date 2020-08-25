@@ -65,10 +65,15 @@
   }
 
   &--link {
+    border: none;
+    &:active {
+      border: none;
+    }
     @include mq(sm) {
       display: block;
-      margin: 0 10px;
+      margin: 0 auto;
       color: $font-color_sub03;
+      background-color: transparent;
     }
   }
 

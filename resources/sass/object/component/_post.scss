@@ -16,6 +16,9 @@
     display: flex;
     align-items: center;
     position: relative;
+    @include mq(sm) {
+      width: 100%;
+    }
   }
 
   &--preview {

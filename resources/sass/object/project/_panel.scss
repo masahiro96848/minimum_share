@@ -13,10 +13,10 @@
     }
 
     @include mq(sm) {
-      width: 45%;
+      width: 40%;
       margin-bottom: $space_l;
-      // margin-right: 15px;
-      margin-left: $space_m;
+      margin-right: 15px;
+      margin-left: 15px;
     }
   }
 
@@ -48,7 +48,7 @@
     @include mq(sm) {
       font-size: $font-size_m;
       overflow: hidden;
-      width: 200px;
+      width: 80px;
       white-space: nowrap;
       text-overflow: ellipsis;
     }
