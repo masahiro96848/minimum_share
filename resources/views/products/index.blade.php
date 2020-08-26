@@ -30,19 +30,13 @@
               </product-like>
             </div>
             <div class="c-product--wrapper">
-              @if (!isset($product->user->profile_image))
-                <a href="{{ route('users.mypage')}}">
+              <a href="{{ route('users.show', ['name' => $product->user->name])}}">
+                @if (!isset($product->user->profile_image))
                   <img src="../img/no_image.jpg" alt="" class="c-user--image">
-                </a>
-              @else
-                <a href="{{ route('users.mypage')}}">
+                @else
                   <img src="{{$product->user->profile_image}}" alt="" class="c-user--image">
-                </a>
-              @endif
-              <a href="{{ route('users.mypage')}}">
-                <img src="{{asset('storage/' . $product->user->profile_image)}}" alt="" class="c-user--image">
+                @endif
               </a>
-          
               <span class="c-user--name">{{ $product->user->name}}</span>
             </div>
             <div class="c-product--wrapper--between">
