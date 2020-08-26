@@ -27,9 +27,9 @@ Route::get('/product/{id}/edit', 'ProductsController@edit')->name('products.edit
 Route::put('/product/{id}/edit', 'ProductsController@update')->name('products.update')->middleware('auth');
 Route::delete('/product/{id}/destroy', 'ProductsController@destroy')->name('products.destroy')->middleware('auth');
 
-Route::get('/mypage', 'UserController@mypage')->name('users.mypage')->middleware('auth');
-Route::get('/mypage/edit', 'UserController@edit')->name('users.edit')->middleware('auth');
-Route::put('/mypage/update', 'UserController@update')->name('users.update')->middleware('auth');
+// Route::get('/mypage', 'UserController@mypage')->name('users.mypage')->middleware('auth');
+// Route::get('/mypage/edit', 'UserController@edit')->name('users.edit')->middleware('auth');
+// Route::put('/mypage/update', 'UserController@update')->name('users.update')->middleware('auth');
 
 
 Route::prefix('product')->name('product.')->group(function() {
@@ -39,3 +39,9 @@ Route::prefix('product')->name('product.')->group(function() {
 
 Route::get('/tags/{name}', 'TagController@show')->name('tags.show');
 
+
+Route::prefix('/users')->name('users.')->group(function() {
+  Route::get('/{name}', 'UserController@show')->name('show');
+  Route::get('/{name}/edit', 'UserController@edit')->name('edit')->middleware('auth');
+  Route::post('/{name}/update', 'UserController@update')->name('update')->middleware('auth');
+});

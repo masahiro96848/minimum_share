@@ -13,7 +13,7 @@
       <li class="p-menu--item "><a class="p-menu--link" href="">Tags</a></li>
       @if (Auth::check())
       <li class="p-menu--item "><a class="p-menu--link" href="{{ route('products.new')}}">Post</a></li>
-      <li class="p-menu--item "><a class="p-menu--link" href="{{ route('users.mypage')}}">Mypage</a></li>
+      <li class="p-menu--item "><a class="p-menu--link" href="{{ route('users.show', ['name' => Auth::user()->name])}}">Mypage</a></li>
       <li class="p-menu--item ">
         <form id="logout-form" method="POST" action="{{ route('logout') }}" >
           @csrf

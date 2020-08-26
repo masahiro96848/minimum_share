@@ -8,7 +8,7 @@
     <div class="l-container--wrapper u-width_100">
       <div class="l-container--form">
         @include('error')
-        <form method="POST" action="{{ route('users.update')}}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('users.update', ['name' => $user->name])}}" enctype="multipart/form-data">
           @csrf
           @method('PUT')
             <div class="c-post--imageBox c-post--img--radius">

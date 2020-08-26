@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use app\User;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\UserRequest;
@@ -10,18 +10,18 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-    public function mypage()
+    public function show($name)
     {
+        $user = User::where('name', $name)->first();
 
-        $user = Auth::user();
-        return view('users.mypage', [
-            'user' => $user,
+        return view('users.show', [
+            'user' => $user
         ]);
     }
 
-    public function edit()
+    public function edit($name)
     {
-        $user = Auth::user();
+        $user = User::where('name', $name)->first();
         return view('users.edit',[
             'user' => $user
         ]);
@@ -54,7 +54,7 @@ class UserController extends Controller
         // $user->email = $request->email;
         // $user->save();
 
-        return redirect()->route('users.mypage');
+        return redirect()->route('users.show');
 
     }
 }
