@@ -13,14 +13,14 @@ class CreateProductCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_category', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('product_id')->unsigned();
-            $table->integer('category_id')->unsigned();
-            $table->foreign('product_id')->references('id')->on('products');
-            $table->foreign('category_id')->references('id')->on('categories');
-            $table->timestamps();
-        });
+        // Schema::create('product_category', function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->integer('product_id')->unsigned();
+        //     $table->integer('category_id')->unsigned();
+        //     $table->foreign('product_id')->references('id')->on('products');
+        //     $table->foreign('category_id')->references('id')->on('categories');
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -30,6 +30,8 @@ class CreateProductCategoryTable extends Migration
      */
     public function down()
     {
+        // $table->dropForeign('products_product_id_foreign');
+        // $table->dropForeign('categories_category_id_foreign');
         Schema::dropIfExists('product_category');
     }
 }

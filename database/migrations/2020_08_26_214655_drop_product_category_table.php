@@ -13,7 +13,7 @@ class DropProductCategoryTable extends Migration
      */
     public function up()
     {
-        // Schema::drop('product_category');
+        
     }
 
     /**
@@ -31,5 +31,6 @@ class DropProductCategoryTable extends Migration
         //     $table->foreign('category_id')->references('id')->on('categories');
         //     $table->timestamps();
         // });
+        // Schema::drop('product_category');
     }
 }

@@ -43,6 +43,7 @@
 
   &--title {
     margin-top: $space_l;
+    margin-bottom: $space_l;
     font-family: $font-family_sub02;
 
     @include mq(sm) {
@@ -53,6 +54,15 @@
       text-overflow: ellipsis;
     }
 
+  }
+
+  &--iconContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: baseline;
+    padding: $space_m;
+    margin-bottom: $space_m;
   }
 
   &--heart {
@@ -77,5 +87,13 @@
     &--button {
       border: none;
     }
+  }
+
+  &--snsTitle {
+    text-align: center;
+  }
+
+  &--snsIcon {
+    text-align: center;
   }
 }
