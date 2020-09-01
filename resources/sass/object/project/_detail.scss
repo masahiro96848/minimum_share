@@ -1,23 +1,30 @@
 .p-detail {
   &--imageBox {
+    width: 600px;
+    height: 500px;
+    margin-right: 5%;
+
     @include mq(lg) {
       width: 100%;
+      margin-right: 0;
     }
 
     @include mq(md) {
       width: 100%;
+      margin-right: 0;
     }
 
     @include mq(sm) {
       width: 350px;
       height: 300px;
+      margin-right: 0;
     }
   }
 
   &--imageBox img {
     width: 600px;
     height: 500px;
-    object-fit: cover;
+    object-fit: contain;
 
     @include mq(lg) {
       width: 100%;
@@ -35,9 +42,9 @@
 
   &--body {
     width: 40%;
+    height: 100%;
     background-color: $background-color_detail;
-    padding-left: $space_s;
-    padding-top: $space_s;
+    padding: $space_s;
 
     @include mq(lg) {
       width: 100%;
@@ -49,6 +56,7 @@
 
     @include mq(sm) {
       width: 100%;
+      margin-top: $space_xxxl;
     }
 
   }
@@ -58,6 +66,14 @@
     margin-top: $space_l;
     margin-bottom: $space_l;
   }
+
+  &--sub {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
 
   &--review {
     padding: $space_m;
@@ -74,6 +90,9 @@
     padding: $space_s $space_m;
     border-radius: 5px;
     border: none;
+    margin-right: $space_m;
+    margin-bottom: 15px;
+    display: inline-block;
   }
 
   &--heart {
@@ -118,6 +137,24 @@
     &--none {
       display: none;
     }
+  }
+
+  &--followContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-left: $space_m;
+    margin-top: $space_m;
+    font-size: $font-size_m;
+  }
+
+  &--followArea {
+    display: flex;
+  }
+
+  &--follow {
+    margin-right: $space_m;
   }
 
 

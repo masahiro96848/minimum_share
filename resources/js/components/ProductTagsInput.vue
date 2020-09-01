@@ -4,7 +4,6 @@
       type="hidden"
       name="tags"
       :value="tagsJson"
-      class="c-post--tags"
     >
 
     <vue-tags-input
@@ -14,6 +13,7 @@
       @tags-changed="newTags => tags = newTags"
       :autocomplete-items="filteredItems"
       :add-on-key="[13, 32]"
+      class="c-post--vueTag"
     >
 
 

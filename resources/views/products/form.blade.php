@@ -1,5 +1,4 @@
 <div class="c-post--imageBox">
-  {{-- <input type="file" name="photo" value="{{ $product->photo ?? old('photo') }}"> --}}
   <product-img-preview
     set-image-data='{{$product->photo ?? ''}}'
     name="photo"
@@ -15,9 +14,17 @@
 <div class="c-post">
   <textarea name="review" id="" cols="30" rows="10" class="c-form--control" placeholder="200文字以内で入力してください" >{{ $product->review ?? old('review') }}</textarea>
 </div>
-<label for="price">Price</label>
-<div class="c-post">
-  <input type="number" class="c-form--control" placeholder="半角数字で入力してください"  name="price" value="{{ $product->price ?? old('peice') }}">
+<label for="category">Category</label>
+<div class="c-post c-post--inputWidth">
+  <select name="category_id" class="c-form--control" id="">
+    <option value="">選択してください</option>
+    @foreach ($categories as $item => $value)
+    <option value="{{ $value['id'] }}" {{ $value['id'] == old('category_id', $product->category_id ?? '') ? 'selected' : ''}}>{{ $value['name']}}</option>
+    {{-- <option  value="{{ $value['id'] }}">{{ $value['name']  }}</option>     --}}
+    {{-- @if(old('category_id') == $item) selected @endif --}}
+    {{-- <option value="{{$value['id']}}" @if(old('category_id') == $value['id']) selected @endif>{{ $value['name']}}</option> --}}
+    @endforeach
+  </select>
 </div>
 <label for="tags">Tags</label>
   <div class="c-post">
@@ -28,7 +35,5 @@
       
     </product-tags-input>
   </div>
-<label for="url">Url</label>
-<div class="c-post">
-  <input type="text" class="c-form--control" placeholder="https://◯◯◯.com"  name="url" value="{{ $product->url ?? old('url') }}">
-</div>
+
+{{-- {{dd($value['id'])}} --}}

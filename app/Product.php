@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $fillable = ['title', 'review', 'price', 'url', 'photo'];
+    protected $fillable = ['title', 'review', 'photo', 'user_id', 'category_id'];
 
     public function user()
     {
@@ -34,5 +34,10 @@ class Product extends Model
     public function tags()
     {
         return $this->belongsToMany('App\Tag')->withTimeStamps();
+    }
+
+    public function category() 
+    {
+        return $this->belongsTo('App\Category');
     }
 }

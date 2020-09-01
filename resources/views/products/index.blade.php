@@ -29,19 +29,18 @@
             
               </product-like>
             </div>
-            <div class="c-product--wrapper">
+            <div class="c-product--wrapper--between">
               <a href="{{ route('users.show', ['name' => $product->user->name])}}">
                 @if (!isset($product->user->profile_image))
                   <img src="../img/no_image.jpg" alt="" class="c-user--image">
                 @else
                   <img src="{{$product->user->profile_image}}" alt="" class="c-user--image">
                 @endif
+                <span class="c-user--name">{{ $product->user->name}}</span>
               </a>
-              <span class="c-user--name">{{ $product->user->name}}</span>
+              <span class="c-product--date">{{ $product->created_at->format('Y-m-d')}}</span> 
             </div>
-            <div class="c-product--wrapper--between">
-              <p class="c-product--date">{{ $product->created_at->format('Y-m-d')}}</p> 
-              <span class="c-product--price">¥{{ $product->price}} </span>
+            <div class="c-product--wrapper c-product--wrapper--end ">
             </div>
           </div>
         </div>

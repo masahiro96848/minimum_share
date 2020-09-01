@@ -26,9 +26,7 @@ class ProductRequest extends FormRequest
         return [
             'title' => 'required|max:30',
             'review' => 'required|max:200',
-            'price' => 'required',
             'tags' => 'json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',
-            'url' => '',
         ];
     }
 
@@ -37,9 +35,7 @@ class ProductRequest extends FormRequest
         return [
             'title' => 'タイトル',
             'review' => 'レビュー',
-            'price' => '金額',
             'tags' => 'タグ',
-            'url' => 'url'
         ];
     }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\User;
 use App\Tag;
+use App\Category;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,6 +40,8 @@ class ProductsController extends Controller
 
     public function new()
     {
+        $user = Auth::user();
+        $categories = Category::all();
         $allTagNames = Tag::all()->map(function($tag) {
             return [
                 'text' => $tag->name,
@@ -46,19 +49,21 @@ class ProductsController extends Controller
         });
         return view('products.new', [
             'allTagNames' => $allTagNames,
+            'categories' => $categories,
         ]);
     }
 
-    public function create(ProductRequest $request, Product $product)
+    public function create(ProductRequest $request)
     {
-        $product->title = $request->title;
-        $product->review = $request->review;
-        $product->price = $request->price;
-        $product->url = $request->url;
-        $product->user_id = $request->user()->id;
+        $user = Auth::user();
+        $product = Product::create([
+            'photo' => $request->file('photo'),
+            'title' => $request->title,
+            'review' => $request->review,
+            'user_id' => $request->user()->id,
+            'category_id' => $request->category_id,
 
-       
-
+        ]);
         // $filename = $request->file('photo')->store('public');
         // $product->photo = str_replace('public', '', $filename);
         // s3アップロード開始
@@ -70,6 +75,9 @@ class ProductsController extends Controller
 
         $product->save();
 
+        // $cateogry->category = $product->category()->id;
+        // $category->id = $request->category()->id;
+        // dd($request->category()->id);
         $request->tags->each(function ($tagName) use ($product) {
             $tag = Tag::firstOrCreate([
                 'name' => $tagName,
@@ -80,19 +88,10 @@ class ProductsController extends Controller
         return redirect()->route('products.index');
     }
 
-    public function edit($id)
+    public function edit($product_id)
     {
-        // $this->authorize('update', $product);
-        // if(Auth::id() !== $product->user_id) {
-            //     return redirect()->route('products.index');
-        // } else {
-            //     // $product = Product::find($id);
-            //     return view('products.edit', [
-                //         'product' => $product
-                
-                //     ]);  
-                // }
-        $product = Product::find($id);
+        $product = Product::find($product_id);
+        $categories = Category::all();
         $this->authorize('update', $product);
         $tagNames = $product->tags->map(function($tag) {
             return [
@@ -108,6 +107,7 @@ class ProductsController extends Controller
 
         return view('products.edit', [
                 'product' => $product,
+                'categories' => $categories,
                 'tagNames' => $tagNames,
                 'allTagNames' => $allTagNames,
             ]);  
@@ -127,11 +127,17 @@ class ProductsController extends Controller
         $product = Product::find($id);
         $this->authorize('update', $product);
         
-        $product->title = $request->title;
-        $product->review = $request->review;
-        $product->price = $request->price;
-        $product->url = $request->url;
-        $product->user_id = $request->user()->id;
+        $product->update([
+            'photo' => $request->file('photo'),
+            'title' => $request->title,
+            'review' => $request->review,
+            'category_id' => $request->category_id,
+        ]);
+        // $product->title = $request->title;
+        // $product->review = $request->review;
+        // $product->price = $request->price;
+        // $product->url = $request->url;
+        // $product->user_id = $request->user()->id;
 
         // $filename = $request->file('photo')->store('public');
         // $product->photo = str_replace('public', '', $filename);

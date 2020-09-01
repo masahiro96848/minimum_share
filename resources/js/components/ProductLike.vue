@@ -9,8 +9,8 @@
         @click="clickLike"
       >
       </i>
-    </button>
     {{ countLikes }}
+    </button>
   </div>
 </template>
 
