@@ -40,3 +40,4 @@
   </div>
   @include('footer')  
 @endsection
+{{-- {{dd($user->profile_image)}} --}}

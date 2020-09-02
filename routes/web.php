@@ -43,5 +43,5 @@ Route::get('/tags/{name}', 'TagController@show')->name('tags.show');
 Route::prefix('/users')->name('users.')->group(function() {
   Route::get('/{name}', 'UserController@show')->name('show');
   Route::get('/{name}/edit', 'UserController@edit')->name('edit')->middleware('auth');
-  Route::post('/{name}/update', 'UserController@update')->name('update')->middleware('auth');
+  Route::put('/{name}/update', 'UserController@update')->name('update')->middleware('auth');
 });
