@@ -8,7 +8,7 @@
     <div class="l-container--wrapper u-width_100">
       <div class="l-container--mypage">
         <div class="c-user--avator">
-          @if (!isset($user->prfile_image))
+          @if (!isset($user->profile_image))
             <img src="../img/no_image.jpg" alt="" class="c-user--image--lg">
           @else
             <img src="{{ $user->profile_image }}" alt="" class="c-user--image--lg">
@@ -49,3 +49,4 @@
   </div>
   @include('footer')  
 @endsection
+

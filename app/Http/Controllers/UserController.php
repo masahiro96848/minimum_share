@@ -32,29 +32,40 @@ class UserController extends Controller
         
         // $filename = $request->file('profile_image')->store('public');
 
+        // $auth_id = Auth::id();
+        // $user = User::find($id);
+        // $user = User::where('id', $auth_id)->update([
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'intro' => $request->intro,
+        //     'profile_image' => $request->file('profile_image'),
+        // ]);
+        $auth_id = Auth::id();
+        $user = User::where('id', $auth_id)->first();
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'intro' => $request->intro,
+            'profile_image' => $request->file('profile_image'),
+        ]);
+        // $request->profile_image = str_replace('public', '', $filename);
+
         $image = $request->file('profile_image');
         // バケットの`myprefix`フォルダへアップロード
         $path = Storage::disk('s3')->put('myprefix', $image, 'public');
         // アップロードした画像のフルパスを取得
-        // $user->profile_image = Storage::disk('s3')->url($path);
-
-        $auth_id = Auth::id();
-        $user = User::where('id', $auth_id)->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'intro' => $request->intro,
-            'profile_image' => $request->profile_image = Storage::disk('s3')->url($path),
-        ]);
-        // $request->profile_image = str_replace('public', '', $filename);
-
+        $user->profile_image = Storage::disk('s3')->url($path);
         
+        $user->save();
 
         // $user->name = $request->name;
         // $user->intro = $request->intro;
         // $user->email = $request->email;
         // $user->save();
 
-        return redirect()->route('users.show');
+        return redirect()->route('users.show', [
+            'name' => $request->name
+        ]);
 
     }
 }
