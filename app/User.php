@@ -42,5 +42,20 @@ class User extends Authenticatable
         return $this->hasMany('App\Product');
     }
 
-    
+    public function followers() 
+    {
+        return $this->belongsToMany('App\User', 'follows', 'following_id', 'follower_id')->withTimestamps();
+    }
+
+    public function followings()
+    {
+        return $this->belongsToMany('App\User', 'follows', 'follower_id', 'following_id')->withTimestamps();
+    }
+
+    public function isFollowedBy(?User $user):bool
+    {
+        return $user
+            ?(bool)$this->followers->where('id', $user->id)->count()
+            : false;
+    }
 }
