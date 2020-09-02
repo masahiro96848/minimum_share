@@ -47,12 +47,14 @@ import Vue from 'vue'
 import ProductLike from './components/ProductLike'
 import ProductTagsInput from './components/ProductTagsInput'
 import ProductImgPreview from './components/ProductImgPreview'
+import FollowButton from './components/FollowButton'
 
 const app = new Vue({
     el: '#app',
     components: {
         ProductLike,
         ProductTagsInput,
-        ProductImgPreview
+        ProductImgPreview,
+        FollowButton
     }
 });

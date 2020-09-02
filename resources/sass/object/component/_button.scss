@@ -35,10 +35,19 @@
   }
 
   &--follow {
-    background-color: $background-color_follow_before;
     padding: $space_m $space_xxl;
+    width: 150px;
     margin-right: $space_m;
     border-radius: 5px;
+    &--before {
+      background-color: $background-color_follow_before;
+      color: black;
+    }
+    &--after {
+      background-color: $background-color_follow_after;
+      color: white;
+    }
+    
     @include mq(sm) {
       padding: 15px $space_xxl;
     }

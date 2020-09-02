@@ -73,7 +73,16 @@
                 <p class="p-detail--follow">10フォロー</p>
                 <p class="p-detail--follower">10フォロワー</p>
               </div>
-                <button class="c-button c-button--follow">フォロー</button>
+                {{-- <button class="c-button c-button--follow">フォロー</button> --}}
+                @if(Auth::id() !== $product->user->id)
+                  <follow-button
+                    :initial-is-followed-by='@json($product->user->isFollowedBy(Auth::user()))'
+                    :authorized='@json(Auth::check())'
+                    endpoint="{{ route('users.follow', ['name' => $product->user->name])}}"
+                  >
+
+                  </follow-button>
+                @endif
             </div>
           </div>
         </div>
@@ -183,5 +192,5 @@
     </div>
   </div>
 </div>
-  @include('footer')
-  @endsection
+@include('footer')
+@endsection

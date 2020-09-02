@@ -78,6 +78,9 @@
   &--review {
     padding: $space_m;
     margin-top: $space_m;
+    & p {
+      word-break:break-all;
+    }
   }
 
   &--tag {
