@@ -29,6 +29,10 @@
                 </label>
               </div>
                 <button class="c-button c-button--submit " type="submit">Login</button>
+                <a href="{{ route('login.{provider}', ['provider' => 'google'])}}" class="c-button c-button--google " type="submit">
+                  <i class="fa fa-google fa-2x" style="margin-right: 10px" aria-hidden="true"></i>
+                    Googleログイン
+                </a>
                 <p class="c-form--link">パスワードを忘れた方は<a href="{{ route('password.request')}}">こちら</a></p>
                 <p class="c-form--link">新規登録は<a href="{{ route('register')}}">こちら</a></p>
             </form>
