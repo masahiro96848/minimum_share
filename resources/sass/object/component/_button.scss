@@ -66,6 +66,28 @@
     }
   }
 
+  &--google {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-color_google;
+    color: white;
+    margin: 0 auto;
+    margin-top: $space_xxl;
+    width: 30%;
+    padding: $space_m $space_m;
+    border-radius: 50px;
+    & a {
+      color: white;
+    }
+    @include mq(md) {
+      width: 45%;
+    }
+    @include mq(sm) {
+      width: 70%;
+    }
+  }
+
 }
 
 
