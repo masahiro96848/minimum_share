@@ -17,6 +17,7 @@
         "league/flysystem-aws-s3-v3": "^1.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.4",
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
         "laravel/ui": "^1.0",
