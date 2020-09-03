@@ -13,9 +13,11 @@ class UserController extends Controller
     public function show($name)
     {
         $user = User::where('name', $name)->first();
+        $products = $user->products->sortByDesc('created_at');
 
         return view('users.show', [
-            'user' => $user
+            'user' => $user,
+            'products' => $products,
         ]);
     }
 
@@ -31,15 +33,6 @@ class UserController extends Controller
     {
         
         // $filename = $request->file('profile_image')->store('public');
-
-        // $auth_id = Auth::id();
-        // $user = User::find($id);
-        // $user = User::where('id', $auth_id)->update([
-        //     'name' => $request->name,
-        //     'email' => $request->email,
-        //     'intro' => $request->intro,
-        //     'profile_image' => $request->file('profile_image'),
-        // ]);
         $auth_id = Auth::id();
         $user = User::where('id', $auth_id)->first();
         $user->update([
@@ -57,11 +50,6 @@ class UserController extends Controller
         $user->profile_image = Storage::disk('s3')->url($path);
         
         $user->save();
-
-        // $user->name = $request->name;
-        // $user->intro = $request->intro;
-        // $user->email = $request->email;
-        // $user->save();
 
         return redirect()->route('users.show', [
             'name' => $request->name
@@ -98,5 +86,42 @@ class UserController extends Controller
         return [
             'name' => $name
         ];
+    }
+
+
+    public function likes($name)
+    {
+        $user = User::where('name', $name)->first();
+
+        $products = $user->likes->sortByDesc('created_at');
+
+        return view('users.likes', [
+            'user' => $user,
+            'products' => $products,
+        ]);
+    }
+
+    public function followings($name)
+    {
+        $user = User::whrere('name', $name)->first();
+
+        $followings = $user->followings->sortByDesc('created_at');
+
+        return view('users.followings', [
+            'user' => $user,
+            'followings' => $followings,
+        ]);
+    }
+
+    public function followers($name)
+    {
+        $user = User::whrere('name', $name)->first();
+
+        $followers = $user->followers->sortByDesc('created_at');
+
+        return view('users.followings', [
+            'user' => $user,
+            'followings' => $followers,
+        ]);
     }
 }
