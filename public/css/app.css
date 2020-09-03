@@ -1061,6 +1061,10 @@ a:hover {
   text-align: center;
 }
 
+.u-background--form {
+  background-color: #FFFFFF;
+}
+
 .u-border--none {
   border-bottom: none;
 }

@@ -31,6 +31,10 @@
                 <input type="password" class="c-form--control" name="password_confirmation" required>
               </div>
                 <button class="c-button c-button--submit " type="submit">Sign up</button>
+                <a href="{{ route('login.{provider}', ['provider' => 'google'])}}" class="c-button c-button--google " type="submit">
+                  <i class="fa fa-google fa-2x" style="margin-right: 10px" aria-hidden="true"></i>
+                    Google 新規登録
+                </a>
                 <p class="c-form--link">ログインは<a href="{{ route('login')}}">こちら</a></p>
             </form>
           </div>
