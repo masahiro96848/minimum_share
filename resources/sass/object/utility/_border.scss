@@ -1,0 +1,10 @@
+.u-border {
+
+  &--none {
+    border-bottom: none;
+  }
+
+  &--bt {
+    border-bottom: 4px solid black;
+  }
+}

@@ -70,8 +70,8 @@
             </div>
             <div class="p-detail--followContent">
               <div class="p-detail--followArea">
-                <p class="p-detail--follow">10フォロー</p>
-                <p class="p-detail--follower">10フォロワー</p>
+                <p class="p-detail--follow">{{ $product->user->count_followings}}フォロー</p>
+                <p class="p-detail--follower">{{ $product->user->count_followers}}フォロワー</p>
               </div>
                 {{-- <button class="c-button c-button--follow">フォロー</button> --}}
                 @if(Auth::id() !== $product->user->id)
@@ -194,3 +194,5 @@
 </div>
 @include('footer')
 @endsection
+
+{{-- {{dd(User::id()->count_ollowings)}} --}}

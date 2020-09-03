@@ -18,6 +18,18 @@
       margin-right: 15px;
       margin-left: 15px;
     }
+
+    &--Mypage {
+      width: 45%;
+      margin-top: $space_xxl;
+
+      @include mq(sm) {
+        width: 40%;
+        margin-bottom: $space_l;
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+    }
   }
 
 
@@ -72,6 +84,7 @@
     @include mq(sm) {
       margin-right: 0;
     }
+
     &--red {
       color: red;
     }

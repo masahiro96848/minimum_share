@@ -86,11 +86,15 @@
   }
 
   &--mypage {
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
 
+    @include mq(lg) {
+      width: 100%;
+    }
+
     @include mq(md) {
-      width: 50%;
+      width: 100%;
     }
 
     @include mq(sm) {
