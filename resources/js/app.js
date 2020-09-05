@@ -48,6 +48,8 @@ import ProductLike from './components/ProductLike'
 import ProductTagsInput from './components/ProductTagsInput'
 import ProductImgPreview from './components/ProductImgPreview'
 import FollowButton from './components/FollowButton'
+import CommentStar from './components/CommentStar'
+
 
 const app = new Vue({
     el: '#app',
@@ -55,6 +57,7 @@ const app = new Vue({
         ProductLike,
         ProductTagsInput,
         ProductImgPreview,
-        FollowButton
+        FollowButton,
+        CommentStar,
     }
 });

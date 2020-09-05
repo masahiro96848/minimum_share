@@ -37,14 +37,21 @@ Route::get('/product/{id}/edit', 'ProductsController@edit')->name('products.edit
 Route::put('/product/{id}/edit', 'ProductsController@update')->name('products.update')->middleware('auth');
 Route::delete('/product/{id}/destroy', 'ProductsController@destroy')->name('products.destroy')->middleware('auth');
 
-// Route::get('/mypage', 'UserController@mypage')->name('users.mypage')->middleware('auth');
-// Route::get('/mypage/edit', 'UserController@edit')->name('users.edit')->middleware('auth');
-// Route::put('/mypage/update', 'UserController@update')->name('users.update')->middleware('auth');
 
 
 Route::prefix('product')->name('product.')->group(function() {
   Route::put('/{product}/like', 'ProductsController@like')->name('like')->middleware('auth');
   Route::delete('/{product}/like', 'ProductsController@unlike')->name('unlike')->middleware('auth');
+});
+
+Route::prefix('/product')->name('comments.')->group(function() {
+  Route::middleware('auth')->group(function() {
+    Route::get('/comment/new', 'CommentsController@new')->name('new');
+    Route::post('/comment/create', 'CommentsController@create')->name('create');
+    Route::get('/comment/{id}/edit', 'CommentsController@edit')->name('edit');
+    Route::put('/comment/{id}/update', 'CommentsController@update')->name('update');
+    Route::delete('/comment/{id}/destroy', 'CommentsController@de')->name('destroy');
+  });
 });
 
 Route::get('/tags/{name}', 'TagController@show')->name('tags.show');
