@@ -13,7 +13,6 @@ class CreateFollowsTable extends Migration
      */
     public function up()
     {
-        // Schema::dropIfExists('follows');
         Schema::create('follows', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('follower_id')->unsigned();
