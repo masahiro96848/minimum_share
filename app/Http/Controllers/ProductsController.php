@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Support\Facades\Storage;
+use Abraham\TwitterOAuth\TwitterOAuth;
 
 class ProductsController extends Controller
 {
@@ -192,4 +193,23 @@ class ProductsController extends Controller
         ];
     }
 
+    public function tweet(Request $request)
+    {
+        $twitter = new TwitterOAuth(
+            env('TWITTER_CONSUMER_KEY'),
+            env('TWITTER_CONSUMER_SECRET'),
+            env('TWITTER_ACCESS_TOKEN'),
+            env('TWITTER_ACCESS_SECRET')
+        );
+        
+        $twitter->post("statuses/update", [
+            "status" =>
+            
+            'New Photo Post!' . PHP_EOL .
+            '新しい聖地の写真が投稿されました!' . PHP_EOL .
+            'タイトル「' . $title . '」' . PHP_EOL .
+            '#photo #anime #photography #アニメ #聖地 #写真 #HolyPlacePhoto' . PHP_EOL .
+            'https://minimum-share.app/product' . $id
+        ]);
+    }
 }

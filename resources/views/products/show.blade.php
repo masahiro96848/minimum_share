@@ -45,8 +45,8 @@
             <div class="p-panel--snsShare">
               <p class="p-panel--snsTitle">お気に入りの写真があったら共有しよう!!</p>
                <a href="{{route("products.edit", ['id' => $product])}}">
-                    <i class="p-panel--edit fa fa-pencil-square fa-lg" aria-hidden="true"></i>
-                  </a>
+                  <i class="p-panel--edit fa fa-pencil-square fa-lg" aria-hidden="true"></i>
+              </a>
               <form action="{{ route('products.destroy', ['id' => $product])}}" method="POST" class="p-panel--trash">
                     @csrf
                     @method('DELETE')
@@ -56,7 +56,9 @@
                   </form>
             </div>
             <div class="p-panel--snsIcon">
-              <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+            <a href="https://twitter.com/share?url=https://minimum-share.app/prouduct/{{ $product->id }}&text={{ $product->title }}">
+                <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+              </a>
             </div>
             <div class="c-product--wrapper u-ml_m">
               <a href="{{ route('users.show', ['name' => $product->user->name])}}">
