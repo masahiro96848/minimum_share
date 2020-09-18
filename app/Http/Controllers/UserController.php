@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function show($name)
     {
-        $user = User::where('name', $name)->first()->load(['products.user', 'products.likes']);
+        $user = User::where('name', $name)->first();
         $products = $user->products->sortByDesc('created_at');
 
         return view('users.show', [

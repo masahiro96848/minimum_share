@@ -29,6 +29,7 @@ Route::prefix('register')->name('register.')->group(function() {
   Route::post('{provider}', 'Auth\RegisterController@registerProviderUser')->name('{provider}');
 });
 
+Route::get('/', 'ProductsController@index')->name('products.index');
 Route::get('/index', 'ProductsController@index')->name('products.index');
 Route::get('/product/{id}', 'ProductsController@show')->name('products.show');
 Route::get('/new', 'ProductsController@new')->name('products.new')->middleware('auth');
