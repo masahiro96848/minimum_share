@@ -11,7 +11,7 @@
     <div class="l-container--wrapper u-pt_80 u-width_100">
       <div class="l-container--form">
         @include('error')
-        <form method="POST" action="{{ route('products.create')}}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('comments.create', ['id' => $product->id])}}" enctype="multipart/form-data">
           @csrf
             @include('comments.form')
           <button class="c-button c-button--submit " type="submit">Post</button>
@@ -21,3 +21,5 @@
   </div>
   @include('footer')  
 @endsection
+
+{{-- {{dd($product->id)}} --}}

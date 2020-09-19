@@ -1,5 +1,10 @@
 <template>
   <div>
+    <input 
+      type="hidden" 
+      name="star" 
+      :value="rating"
+    >
     <star-rating
       
       :max-rating="maxRating"
@@ -11,6 +16,7 @@
       :set-rating="setRating"
       :read-only="readOnly"
       :show-rating="showRating"
+      v-model="rating"
     >
 
     </star-rating>
@@ -45,8 +51,8 @@ export default {
       default: '#ffd055'
     },
     rating: {
-      type: Number,
-      default: 0
+      type: [String, Number],
+      default: () => 0,
     },
     showRating: {
       type: Boolean,
@@ -62,8 +68,10 @@ export default {
   },
   data() {
     return {
-      setRating: '',
+      setRating: 0,
+      dataRating: this.rating,
     };
+    
   },
   
   mounted() {
@@ -73,8 +81,10 @@ export default {
   },
   methods: {
     selectRating: function(rating) {
-      this.rating = rating;
+      this.dataRating = rating;
     },
+
+    
   },
   
 }

@@ -6,6 +6,7 @@ use App\Product;
 use App\User;
 use App\Tag;
 use App\Category;
+use App\Comment;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,10 +35,12 @@ class ProductsController extends Controller
     {
         $product = Product::find($id);
         $user = User::where('id')->get();
+        $comments = $product->comments()->get()->sortByDesc('created_at');
 
         return view('products.show', [
             'product' => $product,
-            'user' => $user
+            'user' => $user,
+            'comments' => $comments,
         ]);
     }
 
@@ -65,7 +68,6 @@ class ProductsController extends Controller
             'review' => $request->review,
             'user_id' => $request->user()->id,
             'category_id' => $request->category_id,
-
         ]);
         // $filename = $request->file('photo')->store('public');
         // $product->photo = str_replace('public', '', $filename);
