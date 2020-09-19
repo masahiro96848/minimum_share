@@ -15,14 +15,14 @@ class CreateProductCommentTable extends Migration
     {
         // Schema::dropIfExists('product_comment');
 
-        Schema::create('product_comment', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('product_id')->unsigned();
-            $table->integer('comment_id')->unsigned();
-            $table->foreign('product_id')->references('id')->on('products')->OnDelete('cascade');
-            $table->foreign('comment_id')->references('id')->on('comments')->OnDelete('cascade');
-            $table->timestamps();
-        });
+        // Schema::create('product_comment', function (Blueprint $table) {
+        //     $table->bigIncrements('id');
+        //     $table->integer('product_id')->unsigned();
+        //     $table->integer('comment_id')->unsigned();
+        //     $table->foreign('product_id')->references('id')->on('products')->OnDelete('cascade');
+        //     $table->foreign('comment_id')->references('id')->on('comments')->OnDelete('cascade');
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -32,6 +32,7 @@ class CreateProductCommentTable extends Migration
      */
     public function down()
     {
+        // Schema::dropIfExists('comments');
         // Schema::dropIfExists('product_comment');
     }
 }

@@ -518,7 +518,7 @@ a:hover {
 .p-comment--container {
   width: 80%;
   height: 100%;
-  padding: 20px;
+  padding: 20px 50px;
   margin: 50px auto;
   background-color: whitesmoke;
 }
@@ -553,7 +553,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 414px) {
