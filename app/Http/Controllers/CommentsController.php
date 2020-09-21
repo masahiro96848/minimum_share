@@ -11,13 +11,21 @@ use Illuminate\Http\Request;
 
 class CommentsController extends Controller
 {
-    public function new($id) 
+    public function new($p_id) 
     {
+    
+        $product = Product::where('id', $p_id)->first();
+    
         if(!Auth::check()) {
             return redirect()->route('login');
         }
         
-        $product = Product::find($id);
+        if(Auth::id() === $product->user_id) {
+            return redirect()->route('products.show', ['id' => $product->id]);
+        }
+        
+        
+        
         return view('comments.new', [
             'product' => $product
         ]);
@@ -57,8 +65,6 @@ class CommentsController extends Controller
         // }
         
 
-
-        
         
         $product = Product::find($id);
         $product->comments()->create([

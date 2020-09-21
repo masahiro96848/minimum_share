@@ -96,9 +96,11 @@
           <div class="p-comment--commentCount">
             <p class="p-comment--countTimes">コメント48件</p>
           </div>
+          @if($product->user->id !== Auth::id() || !Auth::check())
             <a href="{{ route('comments.new', ['id' => $product->id])}}" class="c-button c-button--review">
               レビュー投稿
             </a>
+          @endif
         </div>
         <div class="p-comment--area">
           @foreach($comments as $comment)
@@ -110,7 +112,7 @@
                 @else
                   <img src="{{$user->profile_image}}" alt="" class="c-user--image">
                 @endif
-                <span class="c-user--name">{{ $user->name}}</span>
+                <span class="c-user--name">{{ $comment->user->name}}</span>
               </a>
               @if(Auth::id() === $product->user->id)
               <a href="{{route("products.edit", ['id' => $product])}}">
