@@ -94,7 +94,7 @@
       <div class="p-comment--container l-container--flex">
         <div class="p-comment--count">
           <div class="p-comment--commentCount">
-            <p class="p-comment--countTimes">コメント48件</p>
+            <p class="p-comment--countTimes">コメント{{ $comment_count}}件</p>
           </div>
           @if($product->user->id !== Auth::id() || !Auth::check())
             <a href="{{ route('comments.new', ['id' => $product->id])}}" class="c-button c-button--review">

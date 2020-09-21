@@ -36,11 +36,12 @@ class ProductsController extends Controller
         $product = Product::find($id);
         $user = Auth::user();
         $comments = $product->comments()->get()->sortByDesc('created_at');
-
+        $comment_count = $product->comments()->get()->count();
         return view('products.show', [
             'product' => $product,
             'user' => $user,
             'comments' => $comments,
+            'comment_count' => $comment_count,
         ]);
     }
 
