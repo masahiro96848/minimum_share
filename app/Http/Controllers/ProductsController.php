@@ -34,7 +34,7 @@ class ProductsController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        $user = User::where('id')->get();
+        $user = Auth::user();
         $comments = $product->comments()->get()->sortByDesc('created_at');
 
         return view('products.show', [

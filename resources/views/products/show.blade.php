@@ -96,21 +96,21 @@
           <div class="p-comment--commentCount">
             <p class="p-comment--countTimes">コメント48件</p>
           </div>
-            <button class="c-button c-button--review">
-              <a href="{{ route('comments.new', ['id' => $product->id])}}">レビュー投稿</a>  
-            </button>
+            <a href="{{ route('comments.new', ['id' => $product->id])}}" class="c-button c-button--review">
+              レビュー投稿
+            </a>
         </div>
         <div class="p-comment--area">
           @foreach($comments as $comment)
           <div class="p-comment--box">
             <div class="p-comment--img">
               <a href="{{ route('users.show', ['name' => $product->user->name])}}">
-                @if (!isset($product->user->profile_image))
+                @if (!isset($user->profile_image))
                   <img src="../img/no_image.jpg" alt="" class="c-user--image">
                 @else
-                  <img src="{{$product->user->profile_image}}" alt="" class="c-user--image">
+                  <img src="{{$user->profile_image}}" alt="" class="c-user--image">
                 @endif
-                <span class="c-user--name">{{ $product->user->name}}</span>
+                <span class="c-user--name">{{ $user->name}}</span>
               </a>
               @if(Auth::id() === $product->user->id)
               <a href="{{route("products.edit", ['id' => $product])}}">

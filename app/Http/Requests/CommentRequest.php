@@ -28,7 +28,9 @@ class CommentRequest extends FormRequest
             'title' => 'required|max:30',
             'star' => 'required',
             'body' => 'required|max:300',
+            
         ];
+        
     }
 
     public function attributes()
