@@ -23,6 +23,9 @@ class UserController extends Controller
 
     public function edit($name)
     {
+        if(!Auth::check()) {
+            return redirect()->route('login');
+        }
         $current_user = User::where('name', $name)->first();
 
         if(Auth::user()->name !== $current_user->name) {

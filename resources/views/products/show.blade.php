@@ -117,10 +117,11 @@
                 <span class="c-user--name">{{ $comment->user->name}}</span>
               </a>
               @if(Auth::id() === $comment->user->id)
-              <a href="{{route("products.edit", ['id' => $product])}}">
+              <a href="{{route("comments.edit", ['product_id' => $product, 'comment_id' => $comment->id])}}">
+                
                 <i class="p-panel--edit fa fa-pencil-square fa-lg" aria-hidden="true"></i>
               </a>
-              <form action="{{ route('products.destroy', ['id' => $product])}}" method="POST" class="p-panel--trash">
+              <form action="{{ route('comments.destroy', ['product_id' => $product, 'comment_id' => $comment->id])}}" method="POST" class="p-panel--trash">
                   @csrf
                   @method('DELETE')
                   <button class="p-panel--trash--button">
@@ -148,6 +149,7 @@
             </div>
           </div>
           @endforeach
+         
           {{-- <div class="p-comment--box">
             <div class="p-comment--img">
               <a href="{{ route('users.show', ['name' => $product->user->name])}}">
