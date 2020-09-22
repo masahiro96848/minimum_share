@@ -33,7 +33,7 @@
                 </div>  
               @endif
             @endforeach
-            <div class="p-panel--iconContainer ">
+            <div class="p-panel--iconContainer">
               <product-like
                 :initial-is-liked-by='@json($product->isLikedBy(Auth::user()))'
                 :initial-count-likes='@json($product->count_likes)'
@@ -97,9 +97,11 @@
             <p class="p-comment--countTimes">コメント{{ $comment_count}}件</p>
           </div>
           @if($product->user->id !== Auth::id() || !Auth::check())
+          <div class="p-comment--reviewButton"> 
             <a href="{{ route('comments.new', ['id' => $product->id])}}" class="c-button c-button--review">
               レビュー投稿
             </a>
+          </div>
           @endif
         </div>
         <div class="p-comment--area">
@@ -107,14 +109,14 @@
           <div class="p-comment--box">
             <div class="p-comment--img">
               <a href="{{ route('users.show', ['name' => $product->user->name])}}">
-                @if (!isset($user->profile_image))
+                @if (!isset($comment->user->profile_image))
                   <img src="../img/no_image.jpg" alt="" class="c-user--image">
                 @else
-                  <img src="{{$user->profile_image}}" alt="" class="c-user--image">
+                  <img src="{{$comment->user->profile_image}}" alt="" class="c-user--image">
                 @endif
                 <span class="c-user--name">{{ $comment->user->name}}</span>
               </a>
-              @if(Auth::id() === $product->user->id)
+              @if(Auth::id() === $comment->user->id)
               <a href="{{route("products.edit", ['id' => $product])}}">
                 <i class="p-panel--edit fa fa-pencil-square fa-lg" aria-hidden="true"></i>
               </a>
@@ -137,10 +139,7 @@
                 :read-only=true
                 >
 
-  </comment-star>
-              {{-- @foreach($comment as $key => $val) --}}
-                {{-- <i class="fa fa-star fa-2x"></i> --}}
-              {{-- @endforeach --}}
+              </comment-star>
             </div>
             <div class="p-comment--body">
               <p>

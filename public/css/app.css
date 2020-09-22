@@ -253,6 +253,7 @@ a:hover {
 .c-button--review {
   background-color: #cab7b7;
   width: 200px;
+  margin-top: 20px;
   border-radius: 5px;
 }
 
@@ -545,6 +546,10 @@ a:hover {
   width: 100%;
 }
 
+.p-comment--commentCount {
+  margin-bottom: 30px;
+}
+
 .p-comment--countTimes {
   font-size: 26px;
 }
@@ -562,10 +567,16 @@ a:hover {
   }
 }
 
+.p-comment--reviewButton {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .p-comment--box {
-  width: 45%;
+  width: 500px;
   padding-top: 20px;
   padding-bottom: 20px;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 414px) {
@@ -601,7 +612,8 @@ a:hover {
 
 .p-comment--body {
   line-height: 1.8;
-  padding: 10px;
+  max-width: 500px;
+  word-wrap: break-word;
 }
 
 @media screen and (max-width: 414px) {
