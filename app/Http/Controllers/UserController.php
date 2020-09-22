@@ -23,6 +23,12 @@ class UserController extends Controller
 
     public function edit($name)
     {
+        $current_user = User::where('name', $name)->first();
+
+        if(Auth::user()->name !== $current_user->name) {
+            return redirect()->route('products.index');
+        }
+        
         $user = User::where('name', $name)->first();
         return view('users.edit',[
             'user' => $user
