@@ -42,17 +42,10 @@ class CommentRequest extends FormRequest
         ];
     }
 
+
     // public function withValidator($validator) {
-    //     $validator->after(function($validator) {
-    //         $exists = Comment::where('user_id', $request->user()->id)
-    //                     ->where('product_id', $request->product_id)
-    //                     ->exists();
-        
-    //         if($exists) {
-    //             $fail('すでにコメントは投稿済みです');
-    //         }
-    //     });
-            
-        
+    //     $validator->after(function ($validator) {
+
+    //     })
     // }
 }

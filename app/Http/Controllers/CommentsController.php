@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use App\Product;
+use App\Rules;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CommentRequest;
 
@@ -33,10 +34,11 @@ class CommentsController extends Controller
 
     public function create(CommentRequest $request, $id)
     {
+        $product = Product::find($id);
         // $request->validate([
         //     'product_id' => [
         //         'required',
-        //         'exists:App\product,id',
+        //         'exists:products,id',
         //         function($attribute, $value, $fail) use($request)  {
         //              // ログインしてるかチェック
         //             if(!auth()->check()) {
@@ -46,7 +48,7 @@ class CommentsController extends Controller
 
         //             }
         //             $exists = Comment::where('user_id', $request->user()->id)
-        //                             ->where('product_id', $request->product()->id)
+        //                             ->where('product_id', $request->id)
         //                             ->exists();
                     
         //             if($exists) {
@@ -57,30 +59,14 @@ class CommentsController extends Controller
         //     ],
         // ]);
 
-        // $exists = Comment::where('user_id', $request->user()->id)
-        //                 ->where('product_id', $request->product()->id)->first();
-
-        // if(isset($exists)) {
-        //     return redirect()->route('products.index');
-        // }
-        
-
-        
-        $product = Product::find($id);
         $product->comments()->create([
             'title' => $request->title,
             'star' => $request->star,
             'body' => $request->body,
             'user_id' => $request->user()->id,
+            
         ]);
 
-        $exists = Comment::where('user_id', $request->user()->id)
-                                    ->where('product_id', $product)
-                                    ->get();
-                    
-        if(isset($exists)) {
-            return redirect()->route('products.index');
-        }
 
         return redirect()->route('products.show', [
             'id' => $product->id,
