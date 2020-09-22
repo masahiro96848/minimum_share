@@ -31,15 +31,18 @@ class ProductsController extends Controller
         ]);
     }
 
-    public function show($id)
+    public function show($p_id)
     {
-        $product = Product::find($id);
+        $product = Product::find($p_id);
         $user = Auth::user();
+        $user_img = Auth::id();
+        $comment = $product->comments();
         $comments = $product->comments()->get()->sortByDesc('created_at');
         $comment_count = $product->comments()->get()->count();
         return view('products.show', [
             'product' => $product,
             'user' => $user,
+            'comment' => $comment,
             'comments' => $comments,
             'comment_count' => $comment_count,
         ]);

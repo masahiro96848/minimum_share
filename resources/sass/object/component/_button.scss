@@ -60,6 +60,7 @@
   &--review {
     background-color: $background-color_button01;
     width: 200px;
+    margin-top: $space_l;
     border-radius: 5px;
     @include mq(sm) {
       width: 100%;

@@ -26,7 +26,6 @@ class CommentsController extends Controller
         }
         
         
-        
         return view('comments.new', [
             'product' => $product
         ]);
@@ -69,6 +68,63 @@ class CommentsController extends Controller
 
 
         return redirect()->route('products.show', [
+            'id' => $product->id,
+        ]);
+    }
+
+    public function edit($p_id, $c_id)
+    {
+        if(!Auth::check()) {
+            return redirect()->route('login');
+        }
+        $comment = Comment::where('id', $c_id)->first();
+        $product = Product::where('id', $p_id)->first();
+
+        if(Auth::id() !== $comment->user_id) {
+            return redirect()->route('products.show', [
+                'id' => $product->id,
+            ]);
+        }
+
+    
+        if(!Auth::check()) {
+            return redirect()->route('login');
+        }
+        
+        if(Auth::id() === $product->user_id) {
+            return redirect()->route('products.show', ['id' => $product->id]);
+        }
+
+        return view('comments.edit', [
+            'product' => $product,
+            'comment' => $comment,
+        ]);
+    }
+
+    public function update(CommentRequest $request, $p_id, $c_id)
+    {
+        $product = Product::find($p_id);
+        $comment = Comment::where('id', $c_id)->first();
+        
+        
+        $comment->update([
+            'title' => $request->title,
+            'star' => $request->star,
+            'body' => $request->body,
+        ]);
+
+        return redirect()->route('products.show', [
+            'id' => $product->id,
+        ]);
+    }
+
+    public function destroy($p_id, $c_id)
+    {
+        $product = Product::where('id', $p_id)->first();
+        $comment = Comment::where('id', $c_id)->first();
+        $comment->delete();
+
+        return redirect()->route('products.show',[
             'id' => $product->id,
         ]);
     }

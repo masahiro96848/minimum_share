@@ -49,9 +49,9 @@ Route::prefix('/product')->name('comments.')->group(function() {
   Route::middleware('auth')->group(function() {
     Route::get('/{id}/comment/new', 'CommentsController@new')->name('new');
     Route::post('/{id}/comment/create', 'CommentsController@create')->name('create');
-    Route::get('/comment/{id}/edit', 'CommentsController@edit')->name('edit');
-    Route::put('/comment/{id}/update', 'CommentsController@update')->name('update');
-    Route::delete('/comment/{id}/destroy', 'CommentsController@de')->name('destroy');
+    Route::get('{product_id}/comment/{comment_id}/edit', 'CommentsController@edit')->name('edit');
+    Route::put('{product_id}/comment/{comment_id}/update', 'CommentsController@update')->name('update');
+    Route::delete('{product_id}/comment/{comment_id}/destroy', 'CommentsController@destroy')->name('destroy');
   });
 });
 
