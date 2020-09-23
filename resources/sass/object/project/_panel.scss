@@ -92,10 +92,17 @@
 
   &--edit {
     margin-right: $space_m;
+    @include mq(sm) {
+      font-size: $font-size_xl;
+    }
+
   }
 
   &--trash {
     display: inline-block;
+    @include mq(sm) {
+      font-size: $font-size_20;
+    }
 
     &--button {
       border: none;

@@ -5,8 +5,8 @@
     height: 50px;
     border-radius: 50%;
     @include mq(sm) {
-      width: 20px;
-      height: 20px;
+      width: 50px;
+      height: 50px;
     }
 
     &--lg {
@@ -23,10 +23,7 @@
   &--name {
     padding-left: $space_m;
     @include mq(sm) {
-      font-size: $font-size_s;
-    }
-
-    @include mq(sm) {
+      font-size: $font-size_default;
       padding-left: $space_s;
     }
 

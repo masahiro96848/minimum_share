@@ -9,6 +9,7 @@
 
     @include mq(sm) {
       width: 100%;
+      padding: 0;
     }
 
     @include mq(md) {
@@ -30,6 +31,9 @@
 
   &--countTimes {
     font-size: $font-size_xl;
+    @include mq(sm) {
+      padding: $space_l $space_m;
+    }
   }
 
 
@@ -47,11 +51,12 @@
   &--reviewButton {
     margin-top: $space_l;
     margin-bottom: $space_l;
+
   }
 
   &--box {
-    width: 500px;
-    padding-top: $space_l;
+    width: 550px;
+    padding: $space_l;
     padding-bottom: $space_l;
     margin-top: $space_l;
 
@@ -66,6 +71,12 @@
     @include mq(lg) {
       width: 100%;
     }
+  }
+
+  &--img {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
   }
 
   &--title {
@@ -83,7 +94,6 @@
 
   &--body {
     line-height: 1.8;
-    max-width: 500px;
     word-wrap: break-word;
 
     @include mq(sm) {
