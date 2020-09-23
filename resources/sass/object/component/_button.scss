@@ -63,7 +63,11 @@
     margin-top: $space_l;
     border-radius: 5px;
     @include mq(sm) {
-      width: 100%;
+      display: block;
+      text-align: center;
+      width: 90%;
+      margin: 0 auto;
+      font-size: 24px;
     }
   }
 

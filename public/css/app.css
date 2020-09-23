@@ -259,7 +259,11 @@ a:hover {
 
 @media screen and (max-width: 414px) {
   .c-button--review {
-    width: 100%;
+    display: block;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 24px;
   }
 }
 
@@ -448,8 +452,8 @@ a:hover {
 
 @media screen and (max-width: 414px) {
   .c-user--image {
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -465,12 +469,7 @@ a:hover {
 
 @media screen and (max-width: 414px) {
   .c-user--name {
-    font-size: 10px;
-  }
-}
-
-@media screen and (max-width: 414px) {
-  .c-user--name {
+    font-size: 16px;
     padding-left: 5px;
   }
 }
@@ -527,6 +526,7 @@ a:hover {
 @media screen and (max-width: 414px) {
   .p-comment--container {
     width: 100%;
+    padding: 0;
   }
 }
 
@@ -554,6 +554,12 @@ a:hover {
   font-size: 26px;
 }
 
+@media screen and (max-width: 414px) {
+  .p-comment--countTimes {
+    padding: 20px 10px;
+  }
+}
+
 .p-comment--area {
   display: flex;
   flex-direction: row;
@@ -573,8 +579,8 @@ a:hover {
 }
 
 .p-comment--box {
-  width: 500px;
-  padding-top: 20px;
+  width: 550px;
+  padding: 20px;
   padding-bottom: 20px;
   margin-top: 20px;
 }
@@ -597,6 +603,12 @@ a:hover {
   }
 }
 
+.p-comment--img {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
 .p-comment--title {
   margin-top: 20px;
   font-weight: bold;
@@ -612,7 +624,6 @@ a:hover {
 
 .p-comment--body {
   line-height: 1.8;
-  max-width: 500px;
   word-wrap: break-word;
 }
 
@@ -1057,8 +1068,20 @@ a:hover {
   margin-right: 10px;
 }
 
+@media screen and (max-width: 414px) {
+  .p-panel--edit {
+    font-size: 26px;
+  }
+}
+
 .p-panel--trash {
   display: inline-block;
+}
+
+@media screen and (max-width: 414px) {
+  .p-panel--trash {
+    font-size: 20px;
+  }
 }
 
 .p-panel--trash--button {
