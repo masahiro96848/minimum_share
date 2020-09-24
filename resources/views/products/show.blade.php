@@ -1,5 +1,6 @@
 @extends('app')
 
+@include('meta')
 @section('title', '商品詳細')
 
 @section('content')
@@ -58,9 +59,10 @@
               @endif
             </div>
             <div class="p-panel--snsIcon">
-            <a href="https://twitter.com/share?url=https://minimum-share.app/prouduct/{{ $product->id }}&text={{ $product->title }}">
-                <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
-              </a>
+            <a href="https://twitter.com/share?url=https://minimum-share.app/prouduct/{{ $product->id }}&text={{ $product->title }}&hashtags=mummum" target="_blank" rel="nofollow">
+              <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+            </a>
+
             </div>
             <div class="c-product--wrapper u-ml_m">
               <a href="{{ route('users.show', ['name' => $product->user->name])}}">

@@ -251,6 +251,7 @@ a:hover {
 
 .c-button--profileEdit {
   text-align: center;
+  border-radius: 50px;
   background-color: #d3bfbf;
   font-size: 22px;
   border: none;
@@ -293,7 +294,7 @@ a:hover {
 
 @media screen and (max-width: 414px) {
   .c-button--follow {
-    padding: 15px 40px;
+    padding: 15px 30px;
   }
 }
 
@@ -1088,7 +1089,7 @@ a:hover {
 
 @media screen and (max-width: 414px) {
   .p-panel--box {
-    width: 40%;
+    width: 42%;
     margin-bottom: 20px;
     margin-right: 15px;
     margin-left: 15px;

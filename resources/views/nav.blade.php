@@ -1,6 +1,6 @@
 <header class="l-header--nav ">
   <h1 class="l-header--title u-mt_m u-ml_l ">
-    Minimum Share
+    <a href="{{ route('products.index')}}" class="l-header--title"> Minimum Share</a>
   </h1>
   <div class="p-menu--button u-mr_l">
     <span></span>
