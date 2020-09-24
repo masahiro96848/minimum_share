@@ -8,7 +8,7 @@
      <div class="l-container--title">
       <h2 class="l-container--title--tag">Product Comment</h2>
     </div>
-    <div class="l-container--wrapper u-pt_80 u-width_100">
+    <div class="l-container--wrapper u-pt_40 u-width_100">
       <div class="l-container--form">
         @include('error')
         <form method="POST" action="{{ route('comments.create', ['id' => $product->id])}}" enctype="multipart/form-data">

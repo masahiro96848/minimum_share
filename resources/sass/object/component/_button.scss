@@ -10,8 +10,11 @@
     display: block;
     background-color: $background-color_button01;
     margin: 0 auto;
+    font-size: $font-size_l;
     margin-top: $space_xxl;
     width: 50%;
+    border-radius: 50px;
+
     @include mq(sm) {
       width: 80%;
     }
@@ -21,9 +24,10 @@
     text-align: center;
     border-radius: 50px;
     background-color: $background-color_button02;
-    font-size: $font-size_l;
+    font-size: $font-size_xl;
     border: none;
     margin-top: $space_xl;
+
     @include mq(sm) {
       width: 90%;
       margin: 0 auto;
@@ -34,6 +38,7 @@
     border: none;
     outline: none;
     background: transparent;
+
     &:focus {
       outline: 0;
     }
@@ -44,15 +49,17 @@
     width: 150px;
     margin-right: $space_m;
     border-radius: 5px;
+
     &--before {
       background-color: $background-color_follow_before;
       color: black;
     }
+
     &--after {
       background-color: $background-color_follow_after;
       color: white;
     }
-    
+
     @include mq(sm) {
       padding: 15px $space_xl;
     }
@@ -63,6 +70,7 @@
     width: 200px;
     margin-top: $space_l;
     border-radius: 5px;
+
     @include mq(sm) {
       display: block;
       text-align: center;
@@ -83,18 +91,18 @@
     width: 30%;
     padding: $space_m $space_m;
     border-radius: 50px;
+
     & a {
       color: white;
     }
+
     @include mq(md) {
       width: 45%;
     }
+
     @include mq(sm) {
       width: 70%;
     }
   }
 
 }
-
-
-

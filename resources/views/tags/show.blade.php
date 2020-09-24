@@ -5,6 +5,9 @@
 @section('content')
   @include('nav')
   <div class="l-container">
+    <div class="l-container--title">
+      <h2 class="l-container--title--tag">＃{{ $tag->name}}</h2>
+    </div>
     <div class="l-container--wrapper l-container--between ">
       @foreach ($tag->products as $product)
         <div class="p-panel--box ">
@@ -26,26 +29,18 @@
             
               </product-like>
             </div>
-            <div class="c-product--wrapper">
-              @if (!isset($product->user->profile_image))
-                <a href="{{ route('users.mypage')}}">
-                  <img src="../img/no_image.jpg" alt="" class="c-user--image">
-                </a>
-              @else
-                <a href="{{ route('users.mypage')}}">
-                  <img src="{{$product->user->profile_image}}" alt="" class="c-user--image">
-                </a>
-              @endif
-              <a href="{{ route('users.mypage')}}">
-                <img src="{{asset('storage/' . $product->user->profile_image)}}" alt="" class="c-user--image">
-              </a>
-          
-              <span class="c-user--name">{{ $product->user->name}}</span>
-            </div>
             <div class="c-product--wrapper--between">
-              <p class="c-product--date">{{ $product->created_at->format('Y-m-d')}}</p> 
-              <span class="c-product--price">¥{{ $product->price}} </span>
+              <a href="{{ route('users.show', ['name' => $product->user->name])}}">
+                @if (!isset($product->user->profile_image))
+                  <img src="../img/no_image.jpg" alt="" class="c-user--image">
+                @else
+                  <img src="{{$product->user->profile_image}}" alt="" class="c-user--image">
+                @endif
+                <span class="c-user--name">{{ $product->user->name}}</span>
+              </a>
+              <span class="c-product--date">{{ $product->created_at->format('Y-m-d')}}</span> 
             </div>
+            
           </div>
         </div>
       @endforeach

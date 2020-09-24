@@ -15,6 +15,7 @@ body {
   display: flex;
   flex-flow: column;
   min-height: 100vh;
+  font-family: "Vollkorn", serif;
 }
 
 a {
@@ -192,6 +193,19 @@ a:hover {
   }
 }
 
+.l-container--tags {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 414px) {
+  .l-container--tags {
+    width: 90%;
+  }
+}
+
 .footer {
   text-align: center;
   color: black;
@@ -239,8 +253,10 @@ a:hover {
   display: block;
   background-color: #cab7b7;
   margin: 0 auto;
+  font-size: 22px;
   margin-top: 40px;
   width: 50%;
+  border-radius: 50px;
 }
 
 @media screen and (max-width: 414px) {
@@ -253,7 +269,7 @@ a:hover {
   text-align: center;
   border-radius: 50px;
   background-color: #d3bfbf;
-  font-size: 22px;
+  font-size: 26px;
   border: none;
   margin-top: 30px;
 }
@@ -359,6 +375,7 @@ a:hover {
 
 .c-form--control {
   border: none;
+  border-radius: 50px;
   width: 100%;
   padding: 10px 10px;
   margin-bottom: 30px;
@@ -367,6 +384,10 @@ a:hover {
 .c-form--link {
   text-align: center;
   margin-top: 20px;
+}
+
+.c-form--radius {
+  border-radius: 20px;
 }
 
 .c-input--img {
@@ -530,7 +551,7 @@ a:hover {
 
 .c-user--name--lg {
   text-align: center;
-  font-size: 22px;
+  font-size: 26px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -790,12 +811,14 @@ a:hover {
 @media screen and (max-width: 1024px) {
   .p-detail--body {
     width: 100%;
+    margin-top: 60px;
   }
 }
 
 @media screen and (max-width: 769px) {
   .p-detail--body {
     width: 100%;
+    margin-top: 60px;
   }
 }
 
@@ -834,10 +857,10 @@ a:hover {
 
 .p-detail--tagList {
   padding-right: 10px;
-  background-color: rgba(206, 204, 202, 0.876);
+  background-color: rgba(246, 245, 243, 0.924);
   padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
+  border-radius: 20px;
+  border: 1px solid brown;
   margin-right: 10px;
   margin-bottom: 15px;
   display: inline-block;
@@ -1173,6 +1196,12 @@ a:hover {
   color: red;
 }
 
+.p-panel--iconArea {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+
 .p-panel--edit {
   margin-right: 10px;
 }
@@ -1347,6 +1376,10 @@ a:hover {
 
 .u-pt_80 {
   padding-top: 80px;
+}
+
+.u-pt_40 {
+  padding-top: 40px;
 }
 
 /* bottom */

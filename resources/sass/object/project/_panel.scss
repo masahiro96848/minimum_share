@@ -90,6 +90,11 @@
     }
   }
 
+  &--iconArea {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+  }
   &--edit {
     margin-right: $space_m;
     @include mq(sm) {

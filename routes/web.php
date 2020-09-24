@@ -55,6 +55,7 @@ Route::prefix('/product')->name('comments.')->group(function() {
   });
 });
 
+Route::get('/tags/indez', 'TagController@index')->name('tags.index');
 Route::get('/tags/{name}', 'TagController@show')->name('tags.show');
 
 
