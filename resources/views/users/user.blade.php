@@ -19,10 +19,14 @@
         </div>
         <div class="c-user--follows">
           <div class="c-user--follow">
+          <a href="{{ route('users.followings', ['name' => $user->name])}}">
             <p>{{$user->count_followings}}フォロー</p>
+          </a>
           </div>
           <div class="c-user--follower">
-            <p>{{$user->count_followers}}フォロワー</p>
+            <a href="{{route('users.followers', ['name' => $user->name])}}">
+              <p>{{$user->count_followers}}フォロワー</p>
+            </a>
           </div>
         </div>
         <div class="c-user--intro">

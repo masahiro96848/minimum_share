@@ -112,7 +112,9 @@ class UserController extends Controller
 
     public function followings($name)
     {
-        $user = User::whrere('name', $name)->first();
+        $users = User::all();
+        // dd($users);
+        $user = $users->where('name', $name)->first();
 
         $followings = $user->followings->sortByDesc('created_at');
 
@@ -124,13 +126,13 @@ class UserController extends Controller
 
     public function followers($name)
     {
-        $user = User::whrere('name', $name)->first();
+        $user = User::where('name', $name)->first();
 
         $followers = $user->followers->sortByDesc('created_at');
 
-        return view('users.followings', [
+        return view('users.followers', [
             'user' => $user,
-            'followings' => $followers,
+            'followers' => $followers,
         ]);
     }
 }

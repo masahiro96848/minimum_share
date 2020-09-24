@@ -52,6 +52,27 @@ a:hover {
   }
 }
 
+.l-container--wrapperList {
+  padding-top: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 150px;
+}
+
+@media screen and (max-width: 769px) {
+  .l-container--wrapperList {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .l-container--wrapperList {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .l-container--flex {
   display: flex;
   flex-direction: row;
@@ -145,6 +166,32 @@ a:hover {
   }
 }
 
+.l-container--follow {
+  width: 35%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .l-container--follow {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .l-container--follow {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .l-container--follow {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
 .footer {
   text-align: center;
   color: black;
@@ -228,7 +275,7 @@ a:hover {
 }
 
 .c-button--follow {
-  padding: 10px 40px;
+  padding: 10px 30px;
   width: 150px;
   margin-right: 10px;
   border-radius: 5px;
@@ -452,9 +499,15 @@ a:hover {
 
 @media screen and (max-width: 414px) {
   .c-user--image {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
   }
+}
+
+.c-user--image--sm {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 .c-user--image--lg {
@@ -496,6 +549,45 @@ a:hover {
 @media screen and (max-width: 414px) {
   .c-user--follows {
     width: 60%;
+  }
+}
+
+.c-user--followsList {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  margin-left: 30px;
+  width: 500px;
+}
+
+@media screen and (max-width: 414px) {
+  .c-user--followsList {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.c-user--followList {
+  width: 100px;
+}
+
+@media screen and (max-width: 414px) {
+  .c-user--followList {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+.c-user--followerList {
+  width: 100px;
+  margin-right: 40px;
+}
+
+@media screen and (max-width: 414px) {
+  .c-user--followerList {
+    width: 100%;
+    margin-right: 10px;
+    font-size: 14px;
   }
 }
 
@@ -816,6 +908,22 @@ a:hover {
 
 .p-detail--follow {
   margin-right: 10px;
+}
+
+.p-follow--list {
+  display: flex;
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 414px) {
+  .p-follow--list {
+    display: block;
+    padding: 20px 10px;
+  }
 }
 
 .p-menu--button {
@@ -1339,6 +1447,11 @@ a:hover {
 }
 
 .u-align-items--center {
+  align-items: center;
+}
+
+.u-flex {
+  display: flex;
   align-items: center;
 }
 
