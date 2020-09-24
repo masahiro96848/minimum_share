@@ -150,76 +150,6 @@
             </div>
           </div>
           @endforeach
-         
-          {{-- <div class="p-comment--box">
-            <div class="p-comment--img">
-              <a href="{{ route('users.show', ['name' => $product->user->name])}}">
-                @if (!isset($product->user->profile_image))
-                  <img src="../img/no_image.jpg" alt="" class="c-user--image">
-                @else
-                  <img src="{{$product->user->profile_image}}" alt="" class="c-user--image">
-                @endif
-                <span class="c-user--name">{{ $product->user->name}}</span>
-              </a>
-            </div>
-            <div class="p-comment--title">
-              <p>おしゃれです!! 住んでみたいです!!</p>
-            </div>
-            <div class="p-comment--star">
-              <i class="fa fa-star fa-2x"></i>
-            </div>
-            <div class="p-comment--body">
-              <p>
-                AppleのBluetoothキーボード(UK配列)にコーヒーをこぼしてしまったので急遽購入しました。なるべく外観・機能ともに近く低価格のもの、という視点で選びましたが、使ってみたら元のキーボードよりもナイス。US配列の本品にはDeleteキーが付いていてとても使いやすいです。UK配列にはDeleteのかわりにEjectキーが同じ場所にありますが、使用頻度を考えるとDeleteのほうがありがたいです。また、US配列は#にあたる、数字の3のキーのシフト押下時は£なのですが、この部分については#の出し方とともに製品マニュアルにBritish English選択時のキーマッピングとして記載があり、良心を感じました。Apple製のひんやりしたアルミの(この製品より)重量のある高級感はなくても、このキーボードはひとつの製品として良くできています。キーピッチやタッチも標準的でクセがないと感じました。梱包されていた箱もダンボール製ですが必要最小限サイズで持ち歩きに再利用できそうな感じでよかったです。全体的にスマートな印象を受けました。
-              </p>
-            </div>
-          </div>
-          <div class="p-comment--box">
-            <div class="p-comment--img">
-              <a href="{{ route('users.show', ['name' => $product->user->name])}}">
-                @if (!isset($product->user->profile_image))
-                  <img src="../img/no_image.jpg" alt="" class="c-user--image">
-                @else
-                  <img src="{{$product->user->profile_image}}" alt="" class="c-user--image">
-                @endif
-                <span class="c-user--name">{{ $product->user->name}}</span>
-              </a>
-            </div>
-            <div class="p-comment--title">
-              <p>おしゃれです!! 住んでみたいです!!</p>
-            </div>
-            <div class="p-comment--star">
-              <i class="fa fa-star fa-2x"></i>
-            </div>
-            <div class="p-comment--body">
-              <p>
-                AppleのBluetoothキーボード(UK配列)にコーヒーをこぼしてしまったので急遽購入しました。なるべく外観・機能ともに近く低価格のもの、という視点で選びましたが、使ってみたら元のキーボードよりもナイス。US配列の本品にはDeleteキーが付いていてとても使いやすいです。UK配列にはDeleteのかわりにEjectキーが同じ場所にありますが、使用頻度を考えるとDeleteのほうがありがたいです。また、US配列は#にあたる、数字の3のキーのシフト押下時は£なのですが、この部分については#の出し方とともに製品マニュアルにBritish English選択時のキーマッピングとして記載があり、良心を感じました。Apple製のひんやりしたアルミの(この製品より)重量のある高級感はなくても、このキーボードはひとつの製品として良くできています。キーピッチやタッチも標準的でクセがないと感じました。梱包されていた箱もダンボール製ですが必要最小限サイズで持ち歩きに再利用できそうな感じでよかったです。全体的にスマートな印象を受けました。
-              </p>
-            </div>
-          </div>
-          <div class="p-comment--box">
-            <div class="p-comment--img">
-              <a href="{{ route('users.show', ['name' => $product->user->name])}}">
-                @if (!isset($product->user->profile_image))
-                  <img src="../img/no_image.jpg" alt="" class="c-user--image">
-                @else
-                  <img src="{{$product->user->profile_image}}" alt="" class="c-user--image">
-                @endif
-                <span class="c-user--name">{{ $product->user->name}}</span>
-              </a>
-            </div>
-            <div class="p-comment--title">
-              <p>おしゃれです!! 住んでみたいです!!</p>
-            </div>
-            <div class="p-comment--star">
-              <i class="fa fa-star fa-2x"></i>
-            </div>
-            <div class="p-comment--body">
-              <p>
-                AppleのBluetoothキーボード(UK配列)にコーヒーをこぼしてしまったので急遽購入しました。なるべく外観・機能ともに近く低価格のもの、という視点で選びましたが、使ってみたら元のキーボードよりもナイス。US配列の本品にはDeleteキーが付いていてとても使いやすいです。UK配列にはDeleteのかわりにEjectキーが同じ場所にありますが、使用頻度を考えるとDeleteのほうがありがたいです。また、US配列は#にあたる、数字の3のキーのシフト押下時は£なのですが、この部分については#の出し方とともに製品マニュアルにBritish English選択時のキーマッピングとして記載があり、良心を感じました。Apple製のひんやりしたアルミの(この製品より)重量のある高級感はなくても、このキーボードはひとつの製品として良くできています。キーピッチやタッチも標準的でクセがないと感じました。梱包されていた箱もダンボール製ですが必要最小限サイズで持ち歩きに再利用できそうな感じでよかったです。全体的にスマートな印象を受けました。
-              </p>
-            </div>
-          </div> --}}
         </div>
       </div>
     </div>
@@ -227,5 +157,3 @@
 </div>
 @include('footer')
 @endsection
-
-{{-- {{dd(User::id()->count_ollowings)}} --}}

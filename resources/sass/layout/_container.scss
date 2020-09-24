@@ -21,6 +21,24 @@
 
   }
 
+  &--wrapperList {
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 150px;
+
+    @include mq(md) {
+      padding-left: $space_xl;
+      padding-right: $space_xl;
+    }
+
+    @include mq(sm) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+  }
+
   &--flex {
     display: flex;
     flex-direction: row;
@@ -101,4 +119,22 @@
       width: 100%;
     }
   }
+
+  &--follow {
+    width: 35%;
+    text-align: center;
+    margin: 0 auto;
+    @include mq(lg) {
+      width: 75%;
+    }
+    @include mq(md) {
+      width: 90%;
+    }
+    @include mq(sm) {
+      width: 100%;
+      padding-left: $space_m;
+      padding-right: $space_m;
+    }
+  }
+
 }

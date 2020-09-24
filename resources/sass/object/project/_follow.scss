@@ -1,0 +1,15 @@
+.p-follow {
+  &--list {
+    display: flex;
+    align-items: center;
+    background-color: $background-color_detail;
+    padding: $space_m $space_l;
+    border-radius: 10px;
+    margin-bottom: $space_l;
+    @include mq(sm) {
+      display: block;
+      padding: $space_l $space_m;
+    }
+  }
+
+}
