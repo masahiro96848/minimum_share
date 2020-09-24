@@ -84,9 +84,6 @@ class ProductsController extends Controller
 
         $product->save();
 
-        // $cateogry->category = $product->category()->id;
-        // $category->id = $request->category()->id;
-        // dd($request->category()->id);
         $request->tags->each(function ($tagName) use ($product) {
             $tag = Tag::firstOrCreate([
                 'name' => $tagName,

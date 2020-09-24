@@ -12,6 +12,6 @@
 </div>
 <label for="review">Comment</label>
 <div class="c-post">
-  <textarea name="body" id="" cols="30" rows="10" class="c-form--control" placeholder="300文字以内で入力してください" >{{ $comment->body ?? old('body') }}</textarea>
+  <textarea name="body" id="" cols="30" rows="10" class="c-form--control c-form--radius" placeholder="300文字以内で入力してください" >{{ $comment->body ?? old('body') }}</textarea>
 </div>
 
