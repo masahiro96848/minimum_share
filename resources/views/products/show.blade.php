@@ -52,9 +52,11 @@
               </div>
               <div class="p-panel--iconArea">
                 @if(Auth::id() === $product->user->id)
+                <div>
                 <a href="{{route("products.edit", ['id' => $product])}}">
                   <i class="p-panel--edit fa fa-pencil-square fa-lg" aria-hidden="true"></i>
                 </a>
+                </div>
                 <form action="{{ route('products.destroy', ['id' => $product])}}" method="POST" class="p-panel--trash">
                     @csrf
                     @method('DELETE')
@@ -158,5 +160,5 @@
     </div>
   </div>
 </div>
-{{-- @include('footer') --}}
+@include('footer')
 @endsection

@@ -93,24 +93,27 @@
   &--iconArea {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     margin-right: 15px;
   }
   &--edit {
     margin-right: $space_m;
     @include mq(sm) {
-      font-size: $font-size_xl;
+      font-size: 24px;
     }
 
   }
 
   &--trash {
     display: inline-block;
+    margin-bottom: 0;
     @include mq(sm) {
       font-size: $font-size_20;
     }
 
     &--button {
       border: none;
+      background: none;
     }
   }
 

@@ -46,6 +46,8 @@ export default {
   mounted() {
     if(this.setImageData) {
       return this.uploadedImage = this.setImageData;
+    }else{
+      return '';
     }
   },
   methods: {

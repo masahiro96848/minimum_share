@@ -27,6 +27,7 @@ class ProductRequest extends FormRequest
             'title' => 'required|max:30',
             'review' => 'required|max:200',
             'tags' => 'json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',
+            'photo' => 'required|image|file',
         ];
     }
 
@@ -36,6 +37,7 @@ class ProductRequest extends FormRequest
             'title' => 'タイトル',
             'review' => 'レビュー',
             'tags' => 'タグ',
+            'photo' => '画像'
         ];
     }
 
