@@ -20,9 +20,6 @@
     <option value="">選択してください</option>
     @foreach ($categories as $item => $value)
     <option value="{{ $value['id'] }}" {{ $value['id'] == old('category_id', $product->category_id ?? '') ? 'selected' : ''}}>{{ $value['name']}}</option>
-    {{-- <option  value="{{ $value['id'] }}">{{ $value['name']  }}</option>     --}}
-    {{-- @if(old('category_id') == $item) selected @endif --}}
-    {{-- <option value="{{$value['id']}}" @if(old('category_id') == $value['id']) selected @endif>{{ $value['name']}}</option> --}}
     @endforeach
   </select>
 </div>

@@ -1,6 +1,9 @@
 .c-button {
   border: none;
-  padding: $space_l $space_l;
+  padding: 15px $space_l;
+  &:focus {
+    outline: 0;
+  }
 
   & a {
     display: block;
@@ -14,6 +17,7 @@
     margin-top: $space_xxl;
     width: 50%;
     border-radius: 50px;
+    outline: none;
 
     @include mq(sm) {
       width: 80%;
@@ -26,6 +30,7 @@
     background-color: $background-color_button02;
     font-size: $font-size_xl;
     border: none;
+    outline: none;
     margin-top: $space_xl;
 
     @include mq(sm) {
@@ -49,6 +54,7 @@
     width: 150px;
     margin-right: $space_m;
     border-radius: 5px;
+    outline: none;
 
     &--before {
       background-color: $background-color_follow_before;
@@ -91,6 +97,7 @@
     width: 30%;
     padding: $space_m $space_m;
     border-radius: 50px;
+    outline: none;
 
     & a {
       color: white;

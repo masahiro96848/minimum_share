@@ -45,4 +45,12 @@ class Product extends Model
     {
         return $this->hasMany('App\Comment');
     }
+
+    protected static function boot()
+    {
+        parent::boot();
+        self::deleting(function($product) {
+            $product->comments()->delete();
+        });
+    }
 }
