@@ -39,6 +39,24 @@
 
   }
 
+  &--tag {
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+
+    @include mq(md) {
+      padding-left: $space_xl;
+      padding-right: $space_xl;
+    }
+
+    @include mq(sm) {
+      padding-top: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
   &--flex {
     display: flex;
     flex-direction: row;
@@ -52,6 +70,7 @@
     // padding-right: 100px;
     margin-bottom: 20px;
     text-align: center;
+
     &--tag {
       font-family: $font-family_title;
     }
@@ -124,12 +143,15 @@
     width: 35%;
     text-align: center;
     margin: 0 auto;
+
     @include mq(lg) {
       width: 75%;
     }
+
     @include mq(md) {
       width: 90%;
     }
+
     @include mq(sm) {
       width: 100%;
       padding-left: $space_m;
@@ -142,6 +164,7 @@
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+
     @include mq(sm) {
       width: 90%;
     }

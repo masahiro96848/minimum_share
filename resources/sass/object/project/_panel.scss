@@ -94,10 +94,9 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-right: 15px;
   }
   &--edit {
-    margin-right: $space_m;
+    margin-right: 0;
     @include mq(sm) {
       font-size: 24px;
     }
