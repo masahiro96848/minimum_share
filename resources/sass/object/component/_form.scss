@@ -1,5 +1,6 @@
 .c-form {
   text-align: center;
+  outline: none;
 
   &--container {
     text-align: center;
@@ -16,6 +17,7 @@
     width: 100%;
     padding: $space_m $space_m;
     margin-bottom: $space_xl;
+    outline: none;
   }
 
   &--link {
