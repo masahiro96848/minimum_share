@@ -411,6 +411,7 @@ a:hover {
   padding: 10px 10px;
   margin-bottom: 30px;
   outline: none;
+  background-color: white;
 }
 
 .c-form--link {
@@ -1081,6 +1082,10 @@ a:hover {
     color: #fdeded;
     background-color: transparent;
   }
+}
+
+.p-menu--logout {
+  margin-bottom: 0;
 }
 
 /* メニューボタンのエフェクト */

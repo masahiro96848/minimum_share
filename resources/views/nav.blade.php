@@ -15,7 +15,7 @@
       <li class="p-menu--item "><a class="p-menu--link" href="{{ route('products.new')}}">Post</a></li>
       <li class="p-menu--item "><a class="p-menu--link" href="{{ route('users.show', ['name' => Auth::user()->name])}}">Mypage</a></li>
       <li class="p-menu--item ">
-        <form id="logout-form" method="POST" action="{{ route('logout') }}" >
+        <form id="logout-form" method="POST" action="{{ route('logout') }}" class="p-menu--logout">
           @csrf
             <button id="logout" type="submit" class="p-menu--link" onfocus="this.blur();">Logout</button> 
         </form>
