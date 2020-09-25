@@ -26,7 +26,8 @@ class UserRequest extends FormRequest
         return [
             'name' => 'required|max:20',
             'intro' => 'max:200',
-            'email' => 'required|email '
+            'email' => 'required|email ',
+            'profile_image' =>'image|file',
         ];
     }
 
@@ -35,7 +36,8 @@ class UserRequest extends FormRequest
         return [
             'name' => 'ニックネーム',
             'intro' => '紹介文',
-            'email' => 'メールアドレス'
+            'email' => 'メールアドレス',
+            'profile' => '画像'
         ];
     }
 }

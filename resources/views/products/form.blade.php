@@ -1,6 +1,6 @@
 <div class="c-post--imageBox">
   <product-img-preview
-    set-image-data='{{$product->photo ?? ''}}'
+    set-image-data='{{$product->photo ?? old('photo')}}'
     name="photo"
   >
 
