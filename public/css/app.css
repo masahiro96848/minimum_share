@@ -73,6 +73,28 @@ a:hover {
   }
 }
 
+.l-container--tag {
+  padding-top: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 50px;
+}
+
+@media screen and (max-width: 769px) {
+  .l-container--tag {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .l-container--tag {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .l-container--flex {
   display: flex;
   flex-direction: row;
@@ -671,7 +693,7 @@ a:hover {
 }
 
 .p-comment--commentCount {
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 .p-comment--countTimes {
@@ -680,7 +702,8 @@ a:hover {
 
 @media screen and (max-width: 414px) {
   .p-comment--countTimes {
-    padding: 20px 10px;
+    padding: 10px 10px;
+    margin-bottom: 0;
   }
 }
 
@@ -704,6 +727,13 @@ a:hover {
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 414px) {
+  .p-comment--icon {
+    display: flex;
+    align-items: center;
+  }
+}
+
 .p-comment--box {
   width: 550px;
   padding: 20px;
@@ -714,6 +744,7 @@ a:hover {
 @media screen and (max-width: 414px) {
   .p-comment--box {
     width: 100%;
+    margin-top: 0;
   }
 }
 
@@ -1212,11 +1243,10 @@ a:hover {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 15px;
 }
 
 .p-panel--edit {
-  margin-right: 10px;
+  margin-right: 0;
 }
 
 @media screen and (max-width: 414px) {

@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', $tag->hashtag)
+@section('title', $tag->name)
 
 @section('content')
   @include('nav')
@@ -8,7 +8,7 @@
     <div class="l-container--title">
       <h2 class="l-container--title--tag">＃{{ $tag->name}}</h2>
     </div>
-    <div class="l-container--wrapper l-container--between ">
+    <div class="l-container--tag l-container--between ">
       @foreach ($tag->products as $product)
         <div class="p-panel--box ">
           <a href="{{route('products.show', [$product->id])}}">

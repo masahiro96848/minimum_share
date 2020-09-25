@@ -99,15 +99,15 @@
       <div class="p-comment--container l-container--flex">
         <div class="p-comment--count">
           <div class="p-comment--commentCount">
-            <p class="p-comment--countTimes">コメント{{ $comment_count}}件</p>
+            <p class="p-comment--countTimes">コメント{{ $comment_count }}件</p>
           </div>
-          @if($product->user->id !== Auth::id() || !Auth::check())
           <div class="p-comment--reviewButton"> 
-            <a href="{{ route('comments.new', ['id' => $product->id])}}" class="c-button c-button--review">
-              レビュー投稿
-            </a>
+            @if($product->user->id !== Auth::id() || !Auth::check())
+              <a href="{{ route('comments.new', ['id' => $product->id])}}" class="c-button c-button--review">
+                レビュー投稿
+              </a>
+            @endif
           </div>
-          @endif
         </div>
         <div class="p-comment--area">
           @foreach($comments as $comment)
@@ -122,7 +122,7 @@
                 <span class="c-user--name">{{ $comment->user->name}}</span>
               </a>
               @if(Auth::id() === $comment->user->id)
-              <div>
+              <div class="p-comment--icon">
                 <a href="{{route("comments.edit", ['product_id' => $product, 'comment_id' => $comment->id])}}">
                   <i class="p-panel--edit fa fa-pencil-square fa-lg" aria-hidden="true"></i>
                 </a>
@@ -159,6 +159,6 @@
       </div>
     </div>
   </div>
-  @include('footer')
 </div>
+{{-- @include('footer') --}}
 @endsection

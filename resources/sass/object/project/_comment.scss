@@ -26,13 +26,14 @@
   }
 
   &--commentCount {
-    margin-bottom: $space_xl;
+    margin-bottom: 0;
   }
 
   &--countTimes {
     font-size: $font-size_xl;
     @include mq(sm) {
-      padding: $space_l $space_m;
+      padding: $space_m $space_m;
+      margin-bottom: 0;
     }
   }
 
@@ -56,6 +57,13 @@
 
   }
 
+  &--icon {
+    @include mq(sm) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
   &--box {
     width: 550px;
     padding: $space_l;
@@ -64,6 +72,7 @@
 
     @include mq(sm) {
       width: 100%;
+      margin-top: 0;
     }
 
     @include mq(md) {
