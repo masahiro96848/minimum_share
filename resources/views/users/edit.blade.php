@@ -27,7 +27,7 @@
             </div>
             <label for="intro">Intro</label>
             <div class="c-post">
-              <textarea name="intro" id="" cols="30" rows="10" class="c-form--control c-form--radius" placeholder="200文字以内で入力してください" >{{ $user->intro ?? old('intro') }}</textarea>
+              <textarea name="intro" cols="30" rows="10" class="c-form--control c-form--radius" placeholder="200文字以内で入力してください" >{{ $user->intro ?? old('intro') }}</textarea>
             </div>
             <label for="email">Email</label>
             <div class="c-post">

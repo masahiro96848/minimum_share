@@ -26,6 +26,7 @@ class ProductRequest extends FormRequest
         return [
             'title' => 'required|max:30',
             'review' => 'required|max:200',
+            'category_id' => 'required',
             'tags' => 'json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',
             'photo' => 'required|image|file',
         ];
@@ -36,6 +37,7 @@ class ProductRequest extends FormRequest
         return [
             'title' => 'タイトル',
             'review' => 'レビュー',
+            'カテゴリー' => 'カテゴリー',
             'tags' => 'タグ',
             'photo' => '画像'
         ];
