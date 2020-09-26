@@ -12,12 +12,14 @@
 */
 
 // Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// use Illuminate\Routing\Route;
-
+  //     return view('welcome');
+  // });
+  
+  // use Illuminate\Routing\Route;
+  
 Auth::routes();
+  
+Route::get('/', 'HomeController@index')->name('home.index');
 
 Route::prefix('login')->name('login.')->group(function() {
   Route::get('/{provider}', 'Auth\LoginController@redirectToProvider')->name('{provider}');
@@ -29,7 +31,6 @@ Route::prefix('register')->name('register.')->group(function() {
   Route::post('{provider}', 'Auth\RegisterController@registerProviderUser')->name('{provider}');
 });
 
-Route::get('/', 'ProductsController@index')->name('products.index');
 Route::get('/index', 'ProductsController@index')->name('products.index');
 Route::get('/product/{id}', 'ProductsController@show')->name('products.show');
 Route::get('/new', 'ProductsController@new')->name('products.new')->middleware('auth');

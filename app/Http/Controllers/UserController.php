@@ -32,6 +32,7 @@ class UserController extends Controller
             return redirect()->route('products.index');
         }
         
+
         $user = User::where('name', $name)->first();
         return view('users.edit',[
             'user' => $user
@@ -54,7 +55,7 @@ class UserController extends Controller
 
         $image = $request->file('profile_image');
         // バケットの`myprefix`フォルダへアップロード
-        $path = Storage::disk('s3')->put('myprefix', $image, 'public');
+        $path = Storage::disk('s3')->putFileAs('myprefix', $image, 'public');
         // アップロードした画像のフルパスを取得
         $user->profile_image = Storage::disk('s3')->url($path);
         
