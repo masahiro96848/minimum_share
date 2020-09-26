@@ -9,7 +9,6 @@
     background-repeat: no-repeat;
     @include mq(sm) {
       height: 600px;
-      background-attachment: fixed;
       display: flex;
       align-items: center;
     }
