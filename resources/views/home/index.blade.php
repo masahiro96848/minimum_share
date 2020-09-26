@@ -8,7 +8,7 @@
       <div class="l-container--top">
         <div class="p-home--main">
           <div class="p-home--mainTitle">
-            <h2 class="p-home--title">スマートでコンパクトな生活を</h2>
+            <h2 class="p-home--title">ミニマリストの生活を</h2>
             <h2 class="p-home--title">Shareしませんか？</h2>
           </div>
         </div>

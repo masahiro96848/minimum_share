@@ -1007,16 +1007,40 @@ a:hover {
   background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 414px) {
+  .p-home--main {
+    height: 600px;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+  }
+}
+
 .p-home--mainTitle {
-  padding-top: 200px;
-  padding-left: 60px;
+  padding-top: 150px;
+  padding-left: 150px;
   display: inline-block;
   font-family: "Roboto Condensed", sans-serif;
+}
+
+@media screen and (max-width: 1024px) {
+  .p-home--mainTitle {
+    padding-top: 200px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .p-home--mainTitle {
+    padding-left: 50px;
+  }
 }
 
 @media screen and (max-width: 414px) {
   .p-home--mainTitle {
     padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 100px;
+    width: 100%;
   }
 }
 
@@ -1045,7 +1069,7 @@ a:hover {
 
 .p-home--contents {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 100px 150px;
 }
 
