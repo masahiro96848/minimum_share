@@ -227,6 +227,10 @@ a:hover {
   }
 }
 
+.l-container--top {
+  padding-top: 80px;
+}
+
 .footer {
   text-align: center;
   color: black;
@@ -992,6 +996,150 @@ a:hover {
     display: block;
     padding: 20px 10px;
   }
+}
+
+.p-home--main {
+  width: 100%;
+  height: 800px;
+  background-image: url(/images/background01.jpg?53d4abbb5c8498158b5b9480287487d6);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.p-home--mainTitle {
+  padding-top: 200px;
+  padding-left: 60px;
+  display: inline-block;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+@media screen and (max-width: 414px) {
+  .p-home--mainTitle {
+    padding-left: 0;
+  }
+}
+
+.p-home--title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.p-home--contentsTitle {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.p-home--paragraph {
+  margin-top: 40px;
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+@media screen and (max-width: 414px) {
+  .p-home--paragraph {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+.p-home--contents {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px 150px;
+}
+
+@media screen and (max-width: 1024px) {
+  .p-home--contents {
+    padding: 50px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .p-home--contents {
+    padding: 50px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .p-home--contents {
+    display: block;
+    padding: 20px;
+  }
+}
+
+.p-home--panel {
+  width: 300px;
+}
+
+@media screen and (max-width: 1024px) {
+  .p-home--panel {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .p-home--panel {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .p-home--panel {
+    width: 250px;
+    margin: 0 auto;
+  }
+}
+
+.p-home--head {
+  width: 300px;
+  height: 200px;
+}
+
+@media screen and (max-width: 1024px) {
+  .p-home--head {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .p-home--head {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .p-home--head {
+    width: 250px;
+  }
+}
+
+.p-home--head img {
+  width: 300px;
+  height: 200px;
+}
+
+@media screen and (max-width: 1024px) {
+  .p-home--head img {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .p-home--head img {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .p-home--head img {
+    width: 250px;
+  }
+}
+
+.p-home--body {
+  padding-top: 20px;
+  line-height: 1.8;
 }
 
 .p-menu--button {

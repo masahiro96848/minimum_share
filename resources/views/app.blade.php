@@ -22,6 +22,9 @@
   <link href="https://fonts.googleapis.com/css?family=Vollkorn rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Oswald:700 rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700 rel="stylesheet">
+
+
 
   <link rel="stylesheet" href={{ asset('css/app.css')}} >
   
