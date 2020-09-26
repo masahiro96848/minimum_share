@@ -7,17 +7,31 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
+    @include mq(sm) {
+      height: 600px;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+    }
   }
 
   &--mainTitle {
-    padding-top: 200px;
-    padding-left: 60px;
+    padding-top: 150px;
+    padding-left: 150px;
     display: inline-block;
     font-family: $font-family_main_title;
 
+    @include mq(lg) {
+      padding-top: 200px;
+    }
+    @include mq(md) {
+      padding-left: 50px;
+    }
     @include mq(sm) {
       padding-left: 0;
+      padding-top: 0;
+      padding-bottom: 100px;
+      width: 100%;
     }
   }
 
@@ -43,7 +57,7 @@
 
   &--contents {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 100px 150px;
     @include mq(lg) {
       padding: $space_xxxl;
