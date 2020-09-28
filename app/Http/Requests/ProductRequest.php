@@ -37,7 +37,7 @@ class ProductRequest extends FormRequest
         return [
             'title' => 'タイトル',
             'review' => 'レビュー',
-            'カテゴリー' => 'カテゴリー',
+            'caregory_id' => 'カテゴリー',
             'tags' => 'タグ',
             'photo' => '画像'
         ];
