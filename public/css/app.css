@@ -35,7 +35,7 @@ a:hover {
   padding-top: 150px;
   padding-left: 100px;
   padding-right: 100px;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 }
 
 @media screen and (max-width: 769px) {
@@ -1010,7 +1010,6 @@ a:hover {
 @media screen and (max-width: 414px) {
   .p-home--main {
     height: 600px;
-    background-attachment: fixed;
     display: flex;
     align-items: center;
   }

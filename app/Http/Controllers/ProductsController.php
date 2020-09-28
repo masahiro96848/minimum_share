@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 class ProductsController extends Controller
@@ -24,7 +25,9 @@ class ProductsController extends Controller
 
     public function index()
     {
-        $products = Product::all()->sortByDesc('created_at')->load('user');
+        // $user = User::where('id')->get();
+        $products = Product::paginate(12);
+        // $products = Product::all()->sortByDesc('created_at')->paginate(12);
         
         return view('products.index',[
             'products' => $products,
