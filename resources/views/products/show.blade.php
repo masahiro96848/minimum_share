@@ -6,7 +6,7 @@
 @section('content')
   @include('nav')
   <div class="l-container">
-    <div class="l-container--wrapper u-width_90 u-m_auto">
+    <div class="l-container--wrapper u-width_100 u-m_auto">
       <div class="l-container--box l-container--flex u-align-items--center">
         <div class="p-detail--imageBox">
           <img src="{{ $product->photo }}" alt="" class="p-detail--image">
