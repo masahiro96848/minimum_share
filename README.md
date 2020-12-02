@@ -1,5 +1,7 @@
 # minimum-share
-## ミニマリストの生活やアイテムをシェアするsnsです。
+
+## ミニマリストの生活やアイテムをシェアするSNSです。
+[https://minimum-share.com/](https://minimum-share.com/)
 
 ### アプリケーションの機能一覧
 *●ユーザー管理機能*  
